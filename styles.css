@@ -188,6 +188,11 @@ tr:hover {
 .c-tier { background: #0099ff; color: white; }
 .d-tier { background: #00cc66; color: #333; }
 .f-tier { background: #999; color: #333; }
+.unranked-tier { 
+    background: #333; 
+    color: #999;
+    font-style: italic;
+}
 
 /* Footer */
 footer {
