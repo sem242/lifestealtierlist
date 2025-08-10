@@ -133,6 +133,46 @@ function renderTable(data) {
     });
 }
 
+// Modal functionaliteit
+const modal = document.getElementById("player-modal");
+const modalName = document.getElementById("modal-name");
+const modalSkin = document.getElementById("modal-skin");
+const modalTier = document.getElementById("modal-tier");
+const closeModal = document.querySelector(".close-modal");
+
+// Open modal wanneer op een speler wordt geklikt
+function setupPlayerModals() {
+  document.querySelectorAll("#ranking-data tr").forEach(row => {
+    row.addEventListener("click", function() {
+      const playerName = this.querySelector(".player-cell").textContent.trim();
+      const player = players.find(p => p.name === playerName);
+      
+      if (player) {
+        modalName.textContent = player.name;
+        modalSkin.src = `https://mc-heads.net/body/${player.skin}`;
+        modalTier.textContent = player.tier;
+        modalTier.className = `tier-badge ${tierClasses[player.tier]}`;
+        modal.style.display = "block";
+      }
+    });
+  });
+}
+
+// Sluit modal
+closeModal.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Sluit wanneer buiten de modal wordt geklikt
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Roep dit aan na renderTable()
+setupPlayerModals();
+
 // Zoekfunctionaliteit
 function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
