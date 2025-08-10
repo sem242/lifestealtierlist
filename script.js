@@ -1,4 +1,4 @@
-// Sample data voor LifestealNL rankings
+// Sample data voor LifestealNL rankingss
 const players = [
     { rank: 1, name: "Banzy_", tier: "S", lastUpdated: "8-11-2025", skin: "Banzy_" },
     { rank: 2, name: "Hidspot", tier: "S", lastUpdated: "8-11-2025", skin: "Hidspot" },
