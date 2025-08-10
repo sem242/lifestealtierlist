@@ -1,4 +1,4 @@
-/* Reset en basisstijlen */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,106 +6,128 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Oxanium', 'Montserrat', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
     line-height: 1.6;
-    color: #e0e0e0;
-    background-color: #121212;
-    background-image: linear-gradient(to bottom, #121212 0%, #1a1a2e 100%);
-    min-height: 100vh;
 }
 
 .container {
-    width: 90%;
+    width: 95%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
-/* Header stijlen */
+/* Header */
 header {
-    background-color: #0f0f0f;
-    padding: 1.5rem 0;
-    border-bottom: 3px solid #ff5555;
-    background-image: linear-gradient(to right, #0f0f0f 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 100%);
+    border-bottom: 3px solid #ff0000;
+    padding: 1rem 0;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
 }
 
 .logo {
-    font-family: 'Oxanium', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    letter-spacing: 1px;
 }
 
 .logo-text {
-    color: #ffffff;
+    color: #fff;
 }
 
 .logo-highlight {
-    color: #ff5555;
+    color: #ff0000;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+.socials a {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.socials a:hover {
+    transform: translateY(-3px);
+}
+
+.discord-btn:hover {
+    color: #5865F2;
+}
+
+.tiktok-btn:hover {
+    color: #FE2C55;
 }
 
 .header-content {
     text-align: center;
+    padding: 2rem 0;
 }
 
-header h1 {
-    font-family: 'Oxanium', sans-serif;
-    font-size: 2.2rem;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
+.header-content h1 {
+    font-size: 3rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-header p {
-    color: #aaaaaa;
-    font-size: 0.9rem;
+.header-content p {
+    color: #aaa;
+    font-family: 'Montserrat';
 }
 
-/* Search bar */
+/* Search Bar */
 .search-container {
     display: flex;
     margin: 2rem 0;
+    background: #111;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid #333;
 }
 
 #search-input {
     flex: 1;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
     border: none;
-    border-radius: 4px 0 0 4px;
-    background-color: #252525;
     color: white;
     font-size: 1rem;
 }
 
-#search-input::placeholder {
-    color: #777;
-}
-
 #search-button {
     padding: 0 1.5rem;
-    background-color: #ff5555;
+    background: #ff0000;
     color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
-    font-family: 'Oxanium', sans-serif;
-    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
 #search-button:hover {
-    background-color: #ff3333;
+    background: #cc0000;
 }
 
-/* Tabel stijlen */
+/* Table */
 .ranking-table {
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background: #111;
+    border-radius: 10px;
     overflow: hidden;
+    border: 1px solid #333;
     margin-bottom: 3rem;
-    border: 1px solid #333333;
 }
 
 table {
@@ -113,156 +135,101 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
-    padding: 1.2rem 1rem;
-    text-align: left;
-    border-bottom: 1px solid #333333;
-}
-
 th {
-    background-color: #252525;
-    color: #ff5555;
-    font-weight: 700;
-    font-family: 'Oxanium', sans-serif;
+    background: #1a0000;
+    color: #ff0000;
+    padding: 1.2rem;
+    text-align: left;
     text-transform: uppercase;
+    letter-spacing: 1px;
     font-size: 0.9rem;
-    letter-spacing: 0.5px;
 }
 
-tr:nth-child(even) {
-    background-color: #252525;
+td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #222;
+}
+
+tr:last-child td {
+    border-bottom: none;
 }
 
 tr:hover {
-    background-color: #333333;
+    background: rgba(255, 0, 0, 0.05);
 }
 
 .player-cell {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .player-avatar {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    margin-right: 12px;
-    background-color: #444;
-    border: 2px solid #ff5555;
+    background: #333;
+    border: 2px solid #ff0000;
 }
 
-/* Tier badges in tabel */
+/* Tier badges */
 .tier-badge {
     display: inline-block;
     padding: 0.3rem 0.8rem;
-    border-radius: 20px;
+    border-radius: 50px;
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.s-tier {
-    background-color: #ff5555;
-    color: white;
-}
+.s-tier { background: #ff0000; color: white; }
+.a-tier { background: #ff6600; color: white; }
+.b-tier { background: #ffcc00; color: #333; }
+.c-tier { background: #0099ff; color: white; }
+.d-tier { background: #00cc66; color: #333; }
+.f-tier { background: #999; color: #333; }
 
-.a-tier {
-    background-color: #ff9e55;
-    color: white;
-}
-
-.b-tier {
-    background-color: #ffcc55;
-    color: #333;
-}
-
-.c-tier {
-    background-color: #55aaff;
-    color: white;
-}
-
-.d-tier {
-    background-color: #55ff55;
-    color: #333;
-}
-
-.f-tier {
-    background-color: #aaaaaa;
-    color: #333;
-}
-
-/* Footer stijlen */
+/* Footer */
 footer {
-    background-color: #0f0f0f;
-    padding: 2rem 0;
-    border-top: 1px solid #333333;
+    background: #0a0a0a;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid #333;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.server-info h3 {
-    color: #ff5555;
-    font-family: 'Oxanium', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.server-info p {
-    color: #aaaaaa;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.disclaimer p {
-    color: #666666;
+footer p {
+    color: #666;
     font-size: 0.8rem;
-    text-align: right;
-    line-height: 1.6;
 }
 
-/* Responsive aanpassingen */
+/* Responsive */
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+    .logo {
+        font-size: 1.8rem;
     }
     
-    .disclaimer p {
-        text-align: center;
-        margin-top: 1rem;
+    .header-content h1 {
+        font-size: 2.2rem;
     }
     
     th, td {
-        padding: 0.8rem 0.5rem;
+        padding: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 2rem;
+    .header-top {
+        flex-direction: column;
+        gap: 1rem;
     }
     
-    header h1 {
-        font-size: 1.8rem;
+    .socials {
+        margin-top: 0.5rem;
     }
-
-    .search-container {
+    
+    .player-cell {
         flex-direction: column;
-    }
-
-    #search-input {
-        border-radius: 4px;
-        margin-bottom: 0.5rem;
-    }
-
-    #search-button {
-        border-radius: 4px;
-        padding: 0.8rem;
+        align-items: flex-start;
+        gap: 5px;
     }
 }
