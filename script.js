@@ -3,9 +3,9 @@ const players = [
     // Ranked spelers
     { rank: 1, name: "Banzy_", tier: "S", lastUpdated: "8-11-2025", skin: "Banzy_" },
     { rank: 2, name: "Hidspot", tier: "S", lastUpdated: "8-11-2025", skin: "Hidspot" },
-    { rank: 3, name: "Doevie", tier: "B", lastUpdated: "8-11-2025", skin: "Doevie" },
-    { rank: 4, name: "Chickenfighter50", tier: "F", lastUpdated: "8-11-2025", skin: "Chickenfighter50" },
-    
+    { rank: 4, name: "Doevie", tier: "B", lastUpdated: "8-11-2025", skin: "Doevie" },
+    { rank: 5, name: "Chickenfighter50", tier: "F", lastUpdated: "8-11-2025", skin: "Chickenfighter50" },
+    { rank: 3, name: "MimiBoy15", tier: "A", lastUpdated: "8-12-2025", skin: "MimiBoy15" },
     // Unranked spelers
     { rank: "-", name: "Availqble_", tier: "-", lastUpdated: "-", skin: "Availqble_" },
     { rank: "-", name: "BADPAKonTT", tier: "-", lastUpdated: "-", skin: "BADPAKonTT" },
@@ -46,7 +46,6 @@ const players = [
     { rank: "-", name: "MathiasXD_", tier: "-", lastUpdated: "-", skin: "MathiasXD_" },
     { rank: "-", name: "Matthiezzz", tier: "-", lastUpdated: "-", skin: "Matthiezzz" },
     { rank: "-", name: "Mexz", tier: "-", lastUpdated: "-", skin: "Mexz" },
-    { rank: "-", name: "MimiBoy15", tier: "-", lastUpdated: "-", skin: "MimiBoy15" },
     { rank: "-", name: "Molberts1", tier: "-", lastUpdated: "-", skin: "Molberts1" },
     { rank: "-", name: "MrPaketJup", tier: "-", lastUpdated: "-", skin: "MrPaketJup" },
     { rank: "-", name: "Noudddddino", tier: "-", lastUpdated: "-", skin: "Noudddddino" },
