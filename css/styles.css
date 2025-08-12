@@ -1049,27 +1049,40 @@ footer p {
     }
 }
 
-/* Extra aanpassingen voor nieuwe layout */
-.discord-btn-large,
-.cta-button.discord-large {
-    font-size: 1.3rem;
-    padding: 1.2rem 2.5rem;
-    background: linear-gradient(135deg, #5865F2 0%, #4752c4 100%);
-    color: white;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+/* Voeg deze toe aan het CSS bestand */
+
+/* Countdown styling */
+#countdown {
     font-weight: bold;
+    color: #ff6600;
 }
 
-.discord-btn-large:hover,
-.cta-button.discord-large:hover {
-    background: #4752c4;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(88, 101, 242, 0.4);
+.status-indicator.soon {
+    background: #ff6600;
+    box-shadow: 0 0 10px #ff6600;
+    animation: pulse 2s infinite;
 }
 
-.small-top-margin {
-    padding-top: 2rem !important;
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Larger Discord button */
+.cta-button.discord-large {
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+}
+
+/* Discord member count */
+#discord-count {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-left: 5px;
+}
+
+/* Remove some stats */
+.stats-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
