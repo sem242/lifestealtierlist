@@ -1324,3 +1324,124 @@ tr {
     font-size: 14px;
     text-align: center;
 }
+
+/* Testers sectie stijlen */
+.testers-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.testers-section h2 {
+    color: #ffcc00;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+}
+
+.testers-scroll-container {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.testers-row {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.tester-card {
+    background: #1e1e2e;
+    border-radius: 10px;
+    min-width: 220px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #444;
+    flex-shrink: 0;
+}
+
+.tester-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tester-skin {
+    background: #0f0f1a;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    border-bottom: 2px solid #333;
+}
+
+.full-skin {
+    height: 160px;
+    image-rendering: pixelated;
+    transition: transform 0.3s ease;
+}
+
+.tester-card:hover .full-skin {
+    transform: scale(1.05);
+}
+
+.tester-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.tester-info h3 {
+    color: #fff;
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-family: 'Oxanium', sans-serif;
+}
+
+.tester-role {
+    color: #ffcc00;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: rgba(255, 204, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+/* Verberg scrollbar voor een nettere look */
+.testers-scroll-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.testers-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.testers-scroll-container::-webkit-scrollbar-thumb {
+    background: #ffcc00;
+    border-radius: 10px;
+}
+
+/* Voor bredere schermen */
+@media (min-width: 900px) {
+    .testers-scroll-container {
+        overflow-x: visible;
+    }
+    
+    .testers-row {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
