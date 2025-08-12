@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifestealNL Rankings</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+    <title>LifestealNL | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -15,6 +15,12 @@
                 <div class="logo">
                     <span class="logo-text">LIFESTEAL</span><span class="logo-highlight">NL</span>
                 </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="tierlist.html">Tierlist</a>
+                    <a href="regels.html">Regels</a>
+                    <a href="join.html">Join</a>
+                </nav>
                 <div class="socials">
                     <a href="https://discord.gg/Gn9wHhrx7t" target="_blank" class="discord-btn">
                         <i class="fab fa-discord"></i>
@@ -25,34 +31,22 @@
                 </div>
             </div>
             <div class="header-content">
-                <h1>TIER RANKINGS</h1>
-                <p>Staff-curated player tiers</p>
+                <h1>WELKOM BIJ LIFESTEALNL</h1>
+                <p>Competitive Minecraft Lifesteal Server</p>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Zoek spelers...">
-            <button id="search-button"><i class="fas fa-search"></i></button>
-        </div>
-
-        <div class="ranking-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>RANK</th>
-                        <th>SPELER</th>
-                        <th>TIER</th>
-                        <th>BIJGEWERKT</th>
-                        <th>ACTIE</th>
-                    </tr>
-                </thead>
-                <tbody id="ranking-data">
-                    <!-- Data wordt hier geladen via JavaScript -->
-                </tbody>
-            </table>
-        </div>
+    <main class="container home-buttons">
+        <a href="tierlist.html" class="home-btn tierlist-btn">
+            <i class="fas fa-trophy"></i> Tierlist
+        </a>
+        <a href="regels.html" class="home-btn rules-btn">
+            <i class="fas fa-book"></i> Regels
+        </a>
+        <a href="join.html" class="home-btn join-btn">
+            <i class="fas fa-users"></i> Join Server
+        </a>
     </main>
 
     <footer>
@@ -61,21 +55,6 @@
         </div>
     </footer>
 
-    <!-- Player Modal -->
-    <div id="player-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="skin-display">
-                <img id="modal-skin" src="" alt="Minecraft Skin" class="skin-image">
-            </div>
-            <h2 id="modal-name"></h2>
-            <div class="tier-display">
-                Tier: <span id="modal-tier" class="tier-badge"></span>
-            </div>
-            <div id="modal-test-info" class="test-info"></div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>

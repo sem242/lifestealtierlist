@@ -79,7 +79,10 @@ const players = [
     { rank: "-", name: "babber_", tier: "-", lastUpdated: "-", skin: "babber_" },
     { rank: "-", name: "bestdutchperson", tier: "-", lastUpdated: "-", skin: "bestdutchperson" },
     { rank: "-", name: "_Lebrontheking_", tier: "-", lastUpdated: "-", skin: "_Lebrontheking_" },
-    { rank: "-", name: "_MoaningMan69_", tier: "-", lastUpdated: "-", skin: "_MoaningMan69_" }
+    { rank: "-", name: "_MoaningMan69_", tier: "-", lastUpdated: "-", skin: "_MoaningMan69_" },
+	{ rank: "-", name: "wrapSD", tier: "-", lastUpdated: "-", skin: "wrapSD" },
+	{ rank: "-", name: "pxraiso", tier: "-", lastUpdated: "-", skin: "pxraiso" },
+	{ rank: "-", name: "MiDeadthhh", tier: "-", lastUpdated: "-", skin: "MiDeadthhh" }
 ];
 
 // DOM elements

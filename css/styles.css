@@ -324,3 +324,215 @@ footer p {
         font-size: 0.7em;
     }
 }
+
+/* ====================
+   REGELS PAGINA STIJLEN
+   ==================== */
+.rules-container {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.rule-category {
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #ff0000;
+}
+
+.rule-category h2 {
+    color: #ff0000;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rule-category ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.rule-category li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.rule-category li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff0000;
+}
+
+/* ====================
+   JOIN PAGINA STIJLEN
+   ==================== */
+.join-container {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.join-card {
+    background: #111;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.server-ip {
+    margin: 1.5rem 0;
+}
+
+.server-ip code {
+    display: block;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #ff0000;
+}
+
+#copy-ip-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#copy-ip-btn:hover {
+    background: #ff0000;
+}
+
+.discord-card {
+    border: 2px solid #5865F2;
+}
+
+.discord-btn-large {
+    display: inline-block;
+    background: #5865F2;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.discord-btn-large:hover {
+    background: #4752C4;
+}
+
+/* Navigatiebalk */
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    position: relative;
+}
+
+.main-nav a.active {
+    color: #ff0000;
+}
+
+.main-nav a:hover:not(.active) {
+    color: #aaa;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff0000;
+    transition: width 0.3s;
+}
+
+.main-nav a.active::after,
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* ====================
+   HOMEPAGINA SPECIFIEK
+   ==================== */
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 3rem auto;
+    max-width: 500px;
+}
+
+.home-btn {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.home-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tierlist-btn { background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%); }
+.rules-btn    { background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%); }
+.join-btn     { background: linear-gradient(135deg, #00cc66 0%, #00994d 100%); }
+
+/* ====================
+   NAVIGATIE
+   ==================== */
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.main-nav a.active {
+    color: #ff0000;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff0000;
+    transition: width 0.3s;
+}
+
+.main-nav a.active::after,
+.main-nav a:hover::after {
+    width: 100%;
+}
