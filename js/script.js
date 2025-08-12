@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "oEntityz", tier: "D" },
         { name: "Skibidi_diogo", tier: "D" },
         { name: "Chickenfighter50", tier: "F" },
-        
+        { name: "Gamer_xd_pro_200", tier: "C" },
         // Overige spelers (unranked)
         "Fla3m", "Jurreflorisrobi", "Zenderlink", "Druxiz", "flob1n_", 
         "Ems3y", "jthpower", "404Mat", "Broodkaas", "Smotserela", 
         "Extra_Me", "Xenoary", "LukasMan2", "TIBOWWW_", "Wekko_", 
         "Demistic", "MrPaketJup", "Danoontjuhhh", "MathiasXD_", "Availqble_", 
         "Freakyfreaker", "1xVoidz", "SK_Milo123", "Bl1kje", "FlobiZ15", 
-        "Rxiq", "Daanbas7", "Gamer_xd_pro_200", "VINCE043", "Robbie_1234", 
+        "Rxiq", "Daanbas7", , "VINCE043", "Robbie_1234", 
         "bestdutchperson", "qu1ck3d", "DinobeastYT", "babber_", "JJaden2024", 
         "3746", "SWIPEEEEE", "Fletiofrags", "Cleonekuh12", "Kloas_Tossel", 
         "xmandv", "Wickedfire75", "S_vdn_", "frost658", "Jason12379", 

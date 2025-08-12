@@ -667,7 +667,7 @@ footer p {
 }
 
 .title-gradient {
-    background: linear-gradient(90deg, #ff0000, #ff6600);
+    background: linear-gradient(90deg, #15ff00, #2af010);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
