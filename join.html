@@ -44,15 +44,15 @@
                 <div class="server-ip">
                     <p>IP Adres:</p>
                     <code>play.lifestealnl.nl</code>
-                    <button id="copy-ip-btn">Kopieer IP</button>
+                    <button id="copy-ip-btn" class="btn-copy">Kopieer IP</button>
                 </div>
             </div>
 
             <div class="join-card discord-card">
                 <h2><i class="fab fa-discord"></i> Discord</h2>
                 <p>Join onze community voor updates en support!</p>
-                <a href="https://discord.gg/Gn9wHhrx7t" class="discord-btn-large" target="_blank">
-                    Discord Joinen
+                <a href="https://discord.gg/Gn9wHhrx7t" class="btn-discord" target="_blank">
+                    <i class="fab fa-discord"></i> Discord Joinen
                 </a>
             </div>
         </div>
@@ -65,10 +65,14 @@
     </footer>
 
     <script>
+        // Kopieer IP functionaliteit
         document.getElementById('copy-ip-btn').addEventListener('click', function() {
             navigator.clipboard.writeText('play.lifestealnl.nl');
+            const originalText = this.textContent;
             this.textContent = 'Gekopieerd!';
-            setTimeout(() => this.textContent = 'Kopieer IP', 2000);
+            setTimeout(() => {
+                this.textContent = originalText;
+            }, 2000);
         });
     </script>
 </body>
