@@ -3,10 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifestealNL | Regels</title>
+    <title>LifestealNL | Server Regels</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .rules-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #111;
+            border-radius: 10px;
+            border-left: 4px solid #ff0000;
+        }
+        
+        .rules-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .rules-section h2 {
+            color: #ff0000;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .rules-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .rules-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.6;
+        }
+        
+        .rules-list li:before {
+            content: "•";
+            position: absolute;
+            left: 1rem;
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .rules-highlight {
+            background-color: rgba(255, 0, 0, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .rules-warning {
+            background-color: rgba(255, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            border-left: 3px solid #ff0000;
+        }
+        
+        .rules-signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 2rem;
+        }
+        
+        .rules-mention {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -32,39 +103,92 @@
             </div>
             <div class="header-content">
                 <h1>SERVER REGELS</h1>
-                <p>Lees onze community-richtlijnen</p>
+                <p>Officiële serverregels en strafregelement</p>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <div class="rules-container">
-            <div class="rule-category">
-                <h2><i class="fas fa-ban"></i> Verboden Gedrag</h2>
-                <ul>
-                    <li>❌ Geen hacks, cheats of exploits</li>
-                    <li>❌ Geen griefing buiten PvP-gevechten</li>
-                    <li>❌ Geen discriminatie of harassment</li>
+        <div class="rules-content">
+            <div class="rules-section">
+                <h2><i class="fas fa-fist-raised"></i> Combat Regels</h2>
+                <ul class="rules-list">
+                    <li>Geen Crystals & Respawn Anchors.</li>
+                    <li>Geen Netherite Armor <em>(Tools wel toegestaan m.u.v. sword & axe)</em></li>
+                    <li>Geen <span class="rules-highlight">Trident</span> in combat</li>
+                    <li>Pearl cap op <span class="rules-highlight">32</span>.</li>
+                    <li>Geen <span class="rules-highlight">Elytra</span> in combat.</li>
+                    <li><span class="rules-highlight">1 Mace</span> op de server niet meer!</li>
+                    <li><span class="rules-highlight">1 Totem</span> Max in combat.</li>
+                    <li>Maximaal 10 Notch apples.</li>
+                    <li>Maximaal 128 Golden apples.</li>
+                    <li>Niet spawnkillen.</li>
+                    <li>Niet dangerloggen.</li>
+                    <li>Geen Stasis in combat</li>
+                    <li>Geen tipped arrows.</li>
+                    <li><span class="rules-highlight">MACE ALTIJD OPZAK</span></li>
+                    <li><span class="rules-highlight">GEEN CURSE OF VANISHING OP MACE</span></li>
                 </ul>
             </div>
 
-            <div class="rule-category">
-                <h2><i class="fas fa-check"></i> Verplicht</h2>
-                <ul>
-                    <li>✅ Respecteer alle spelers en staff</li>
-                    <li>✅ Speel fair binnen de Lifesteal-mechanics</li>
-                    <li>✅ Report bugs via Discord</li>
+            <div class="rules-section">
+                <h2><i class="fas fa-laptop-code"></i> Client & Cheats Regels</h2>
+                <ul class="rules-list">
+                    <li>Geen seed finder/seed map.</li>
+                    <li>Geen X-Ray.</li>
+                    <li>Geen Freecam.</li>
+                    <li>Geen Entity Radar op minimap.</li>
+                    <li>Geen Hack Clients of 3rd party tools waarmee je een <span class="rules-highlight">voordeel</span> kan krijgen op andere spelers.</li>
+                    <li>• Geen <span class="rules-highlight">Speedhacks</span> <span class="rules-highlight">Killaura</span> <span class="rules-highlight">ChestESP</span> bijvoorbeeld.</li>
+                    <li>Probeer geen dupe glitches en exploits waarmee je spullen dupliceert <em>(Met uitzondering string duper) (wel gevonden, direct melden!)</em></li>
+                    <li>Niet exploiten</li>
+                    <li>Geen Pie Chart</li>
+                    <li>Geen Health Indicator</li>
                 </ul>
             </div>
 
-            <div class="rule-category">
-                <h2><i class="fas fa-exclamation-triangle"></i> Sancties</h2>
-                <p>Overtredingen leiden tot:</p>
-                <ul>
-                    <li>1e keer: Waarschuwing</li>
-                    <li>2e keer: 3 dagen ban</li>
-                    <li>3e keer: Permanente ban</li>
+            <div class="rules-section">
+                <h2><i class="fas fa-info-circle"></i> Overige Regels</h2>
+                <ul class="rules-list">
+                    <li>Max aantal <span class="rules-highlight">8</span> aantal spelers per team.</li>
+                    <li>Geen alliances <em>(Anders is de team cap van 8 niet te handhaven en vecht je steeds tegen dezelfde teams.)</em></li>
+                    <li>Je mag niet <span class="rules-highlight">bovengrondse</span> bases griefen.</li>
+                    <li><span class="rules-highlight">Bases moeten zich ten alle tijden in de overworld bevinden.</span></li>
+                    <li><span class="rules-highlight">Geen villagers killen, max 2 villagers uit een village meenemen!</span></li>
+                    <li><span class="rules-highlight">Streamsnipen is verboden</span></li>
+                    <li><span class="rules-highlight">Zorg dat je clips hebt voor alles anders geven we geen loot terug!!!</span></li>
                 </ul>
+            </div>
+
+            <div class="rules-warning">
+                <h3>Strafregelement spelers</h3>
+                <p><strong>Dupen & exploiten zonder te melden is instant season ban</strong></p>
+                <h4>PVP cheats</h4>
+                <ul class="rules-list">
+                    <li><strong>1ste overtreding</strong> = 24h ban</li>
+                    <li><strong>2e overtreding</strong> = 7d ban</li>
+                    <li><strong>3e overtreding</strong> = season ban</li>
+                </ul>
+                <h4>Algemeen strafregelement</h4>
+                <ul class="rules-list">
+                    <li>1ste warn = niks aan de hand</li>
+                    <li>2de warn = kick (ookal zit je in combat)</li>
+                    <li>3de warn = autoban van 1 dag</li>
+                    <li>4de warn of meer = ban die de staff uitdeelt, eigen keuze hierin.</li>
+                </ul>
+                <p><strong>Warns verdwijnen na 2 weken weer.</strong></p>
+                <p><strong>Na season ban volgend seizoen weer een ban = perm ban</strong></p>
+            </div>
+
+            <div class="rules-mention">@everyone</div>
+
+            <div class="rules-warning">
+                <p><strong>Al probeer je de server te joinen met een geleaked ip dan zal er ook een sanctie volgen.</strong></p>
+            </div>
+
+            <div class="rules-signature">
+                <p>Met vriendelijke groet,<br>
+                Lifesteal NL staff team</p>
             </div>
         </div>
     </main>
