@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Mettix", tier: "C" },
         { name: "BADPAKonTT", tier: "C" },
         { name: "zaylz", tier: "C" },
+        { name: "Gamer_xd_pro_200", tier: "C" },
         { name: "ItzTrazyyy", tier: "D" },
         { name: "mexz", tier: "D" },
         { name: "oEntityz", tier: "D" },
         { name: "Skibidi_diogo", tier: "D" },
         { name: "Chickenfighter50", tier: "F" },
-        { name: "Gamer_xd_pro_200", tier: "C" },
         // Overige spelers (unranked)
         "Fla3m", "Jurreflorisrobi", "Zenderlink", "Druxiz", "flob1n_", 
         "Ems3y", "jthpower", "404Mat", "Broodkaas", "Smotserela", 
