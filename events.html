@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifestealNL | Events</title>
+    <title>LifestealNL | Server Opening</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,35 +12,33 @@
         .events-container {
             max-width: 800px;
             margin: 2rem auto;
+            text-align: center;
         }
         
         .event-card {
             background: #1a1a1a;
             border-radius: 10px;
-            padding: 1.5rem;
+            padding: 2rem;
             margin-bottom: 1.5rem;
             border-left: 4px solid #ff0000;
-            transition: transform 0.3s;
-        }
-        
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
         }
         
         .event-card h2 {
             color: #ff6600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
         }
         
         .event-meta {
             display: flex;
+            justify-content: center;
             gap: 1.5rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             color: #aaa;
+            flex-wrap: wrap;
         }
         
         .event-meta-item {
@@ -49,50 +47,48 @@
             gap: 8px;
         }
         
-        .event-prize {
-            background: rgba(255, 215, 0, 0.1);
-            padding: 0.5rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin: 0.5rem 0;
+        .countdown {
+            font-size: 2rem;
             font-weight: bold;
+            margin: 2rem 0;
+            color: #ff6600;
+            font-family: 'Oxanium', sans-serif;
+        }
+        
+        .countdown span {
+            padding: 0 10px;
         }
         
         .event-btn {
             display: inline-block;
             background: #ff0000;
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
             transition: all 0.3s;
         }
         
         .event-btn:hover {
             background: #cc0000;
             box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+            transform: translateY(-2px);
         }
         
-        .upcoming-label {
-            background: #ff0000;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
+        .highlight {
+            color: #ff6600;
             font-weight: bold;
+        }
+        
+        .grace-period {
+            background: rgba(0, 255, 0, 0.1);
+            padding: 0.8rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
             display: inline-block;
-            margin-left: 10px;
-        }
-        
-        .past-event {
-            opacity: 0.7;
-            border-left-color: #666;
-        }
-        
-        .past-event h2 {
-            color: #666;
         }
     </style>
 </head>
@@ -119,86 +115,90 @@
                 </div>
             </div>
             <div class="header-content">
-                <h1>EVENTS & TOURNAMENTS</h1>
-                <p>Doe mee met onze maandelijkse competities</p>
+                <h1>SEASON 3 SERVER OPENING</h1>
+                <p>De langverwachte opening van Lifesteal Season 3!</p>
             </div>
         </div>
     </header>
 
     <main class="container">
         <div class="events-container">
-            <!-- Aankomend Event -->
             <div class="event-card">
                 <h2>
-                    <i class="fas fa-trophy"></i> Maandelijkse 1v1 Tournament
-                    <span class="upcoming-label">NIEUW</span>
+                    <i class="fas fa-server"></i> OFFICIËLE OPENING SEASON 3
                 </h2>
+                
+                <div class="countdown" id="countdown">
+                    <span id="days">00</span>d 
+                    <span id="hours">00</span>u 
+                    <span id="minutes">00</span>m 
+                    <span id="seconds">00</span>s
+                </div>
+                
                 <div class="event-meta">
                     <div class="event-meta-item">
-                        <i class="far fa-calendar-alt"></i> 15 Augustus 2023
+                        <i class="far fa-calendar-alt"></i> 12 Augustus 2025
                     </div>
                     <div class="event-meta-item">
                         <i class="far fa-clock"></i> 20:00 UTC+2
                     </div>
-                    <div class="event-meta-item">
-                        <i class="fas fa-users"></i> Max 32 deelnemers
-                    </div>
                 </div>
-                <div class="event-prize">
-                    <i class="fas fa-gem"></i> Prijzenpot: 64 Diamanten + Custom Role
-                </div>
+                
                 <p>
-                    Klassiek knock-out tournament met onze speciale Lifesteal regels. 
-                    Elke match is best-of-5 rounds. Meld je aan via Discord!
+                    <span class="highlight">BESTE LIFESTEAL MEMBERS!</span><br><br>
+                    Naar aanleiding van de polls is er besloten dat jullie dinsdag 12-08-2025 om 20:00 open willen gaan. 
+                    Dus Lifesteal <span class="highlight">SEASON 3</span> gaat morgen om 20:00 <span class="highlight">OFFICIEEL</span> open!!
                 </p>
+                
+                <div class="grace-period">
+                    <i class="fas fa-shield-alt"></i> Eerste 45 minuten: GRACE PERIOD
+                </div>
+                
+                <p>
+                    Ook is er besloten dat we 2 weken na de opening de End gaan open zetten. 
+                    Dit houdt dus in dat in de week van <span class="highlight">25-08-2025</span> de End open zal gaan.
+                </p>
+                
                 <a href="https://discord.gg/Gn9wHhrx7t" class="event-btn">
-                    <i class="fab fa-discord"></i> Meld je nu aan
+                    <i class="fab fa-discord"></i> Bevestig je aanwezigheid!
                 </a>
-            </div>
-
-            <!-- Team Event -->
-            <div class="event-card">
-                <h2><i class="fas fa-users"></i> Team Deathmatch</h2>
-                <div class="event-meta">
-                    <div class="event-meta-item">
-                        <i class="far fa-calendar-alt"></i> 22 Augustus 2023
-                    </div>
-                    <div class="event-meta-item">
-                        <i class="fas fa-users"></i> 5v5 Teams
-                    </div>
-                </div>
-                <p>
-                    Strategische team battle met aangepaste regels. Maximaal 8 teams kunnen deelnemen.
-                    Elk team moet uit minimaal 5 spelers bestaan.
-                </p>
-                <a href="https://discord.gg/Gn9wHhrx7t" class="event-btn">
-                    <i class="fas fa-info-circle"></i> Meer informatie
-                </a>
-            </div>
-
-            <!-- Vorig Event (voorbeeld) -->
-            <div class="event-card past-event">
-                <h2><i class="fas fa-flag-checkered"></i> Speedrun Challenge</h2>
-                <div class="event-meta">
-                    <div class="event-meta-item">
-                        <i class="far fa-calendar-alt"></i> 1 Juli 2023
-                    </div>
-                    <div class="event-meta-item">
-                        <i class="fas fa-trophy"></i> Gewonnen door Hidspot
-                    </div>
-                </div>
-                <p>
-                    Eerste editie van onze maandelijkse speedrun challenge. Volgende editie komt in September!
-                </p>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2023 LIFESTEALNL | GEEN OFFICIELE MINECRAFT SERVER</p>
+            <p>© 2025 LIFESTEALNL | SEASON 3</p>
             <p class="server-ip">Server IP: <code>play.lifestealnl.nl</code></p>
         </div>
     </footer>
+
+    <script>
+        // Countdown script
+        function updateCountdown() {
+            const openingDate = new Date("August 12, 2025 20:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = openingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("countdown").innerHTML = "DE SERVER IS NU OPEN!";
+            }
+        }
+        
+        // Update every second
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
