@@ -1359,7 +1359,7 @@ tr {
 }
 
 .tester-card {
-    background: #1e1e2e;
+    background: #612f2f;
     border-radius: 10px;
     min-width: 220px;
     overflow: hidden;
@@ -1375,7 +1375,7 @@ tr {
 }
 
 .tester-skin {
-    background: #0f0f1a;
+    background: #612f2f;
     padding: 15px;
     display: flex;
     justify-content: center;
