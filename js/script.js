@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Vereenvoudigde voorbeelddata
     const playerData = [
         { rank: 1, name: "Player1", tier: "S", updated: "2023-07-15" },
         { rank: 2, name: "Player2", tier: "A", updated: "2023-07-14" },
@@ -18,6 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalName = document.getElementById('modal-name');
     const modalTier = document.getElementById('modal-tier');
 
+    // Tier kleuren mapping
+    const tierColors = {
+        'S': 's-tier',
+        'A': 'a-tier',
+        'B': 'b-tier',
+        'C': 'c-tier',
+        'D': 'd-tier',
+        'F': 'f-tier'
+    };
+
     // Laad tabeldata
     function loadTableData(data) {
         rankingTable.innerHTML = '';
@@ -25,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data.forEach(player => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${player.rank}</td>
+                <td class="rank-cell ${tierColors[player.tier] || 'unranked-tier'}">${player.rank}</td>
                 <td>
                     <div class="player-cell">
                         <img src="https://mc-heads.net/avatar/${player.name}/32" 
@@ -35,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${player.name}
                     </div>
                 </td>
-                <td><span class="tier-badge tier-${player.tier}">${player.tier}</span></td>
+                <td><span class="tier-badge ${tierColors[player.tier] || 'unranked-tier'}">${player.tier}</span></td>
                 <td>${formatDate(player.updated)}</td>
                 <td><button class="view-player-btn" data-name="${player.name}">
                     <i class="fas fa-eye"></i> Bekijk
@@ -87,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Basis info
         modalName.textContent = player.name;
         modalTier.textContent = player.tier;
-        modalTier.className = `tier-badge tier-${player.tier}`;
+        modalTier.className = `tier-badge ${tierColors[player.tier] || 'unranked-tier'}`;
         modalSkin.src = `https://mc-heads.net/body/${player.name}`;
         modalSkin.alt = `${player.name}'s skin`;
 

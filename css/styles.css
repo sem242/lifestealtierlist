@@ -1197,3 +1197,20 @@ tr {
         padding: 5px 8px;
     }
 }
+
+/* Rank cell styling */
+.rank-cell {
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    color: white;
+}
+
+/* Tier kleuren voor rank cells */
+.rank-cell.s-tier { background-color: #ff0000; }
+.rank-cell.a-tier { background-color: #ff6600; }
+.rank-cell.b-tier { background-color: #ffcc00; color: #333; }
+.rank-cell.c-tier { background-color: #0099ff; }
+.rank-cell.d-tier { background-color: #00cc66; color: #333; }
+.rank-cell.f-tier { background-color: #999; color: #333; }
+.rank-cell.unranked-tier { background-color: #333; color: #999; }
