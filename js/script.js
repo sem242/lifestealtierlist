@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "llynix", "GrasSprietjuh", "FW_Teru", "FlyingDutchy2", "Noudddddino", 
         "sm75851", "Molberts1", "_Lebrontheking_", "Egirlstarzy", "MoaningMan69", 
         "Matthiezzz", "Leonekuh12", "wrapSD", "pxraiso", "MiDeathhh", 
-        "Kuspim", "Vogelkak"
+        "Kuspim", "Vogelkak", "Angelotijger"
     ];
 
     // Maak playerData array met ranks en tiers

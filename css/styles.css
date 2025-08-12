@@ -625,12 +625,19 @@ footer p {
    ==================== */
 .hero-header {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    height: auto; /* Vervang 100vh */
+    min-height: unset; /* Verwijder vaste hoogte */
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 100%);
-    overflow: hidden;
+    padding-bottom: 3rem; /* Voeg toe */
+}
+
+.features-section {
+    padding: 2rem 0 3rem; /* Minder ruimte */
+    background: #111;
+    position: relative;
+    margin-top: -1rem; /* Trek omhoog */
 }
 
 #particles-js {
@@ -751,11 +758,6 @@ footer p {
 /* ====================
    FEATURES SECTION
    ==================== */
-.features-section {
-    padding: 5rem 0;
-    background: #111;
-    position: relative;
-}
 
 .section-header {
     text-align: center;
