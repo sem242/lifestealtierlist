@@ -1,115 +1,122 @@
-// Homepage interacties
 document.addEventListener('DOMContentLoaded', function() {
-    // Particles.js config
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#ff0000" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#ff0000", opacity: 0.3, width: 1 },
-                move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" }
-                }
-            }
-        });
-    }
+    // Vereenvoudigde voorbeelddata
+    const playerData = [
+        { rank: 1, name: "Player1", tier: "S", updated: "2023-07-15" },
+        { rank: 2, name: "Player2", tier: "A", updated: "2023-07-14" },
+        { rank: 3, name: "Player3", tier: "B", updated: "2023-07-13" },
+        { rank: 4, name: "Player4", tier: "C", updated: "2023-07-12" },
+        { rank: 5, name: "Player5", tier: "D", updated: "2023-07-11" }
+    ];
 
-    // Countdown to August 12 20:00
-    const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date('August 12, 2025 20:00:00').getTime();
+    // DOM elementen
+    const rankingTable = document.getElementById('ranking-data');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const playerModal = document.getElementById('player-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const modalSkin = document.getElementById('modal-skin');
+    const modalName = document.getElementById('modal-name');
+    const modalTier = document.getElementById('modal-tier');
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        if (distance < 0) {
-            countdownElement.textContent = "SEASON 3 LIVE!";
-            document.querySelector('.status-indicator').classList.remove('soon');
-            document.querySelector('.status-indicator').classList.add('online');
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownElement.textContent = `SEASON 3 SOON... ${days}d ${hours}u ${minutes}m ${seconds}s`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    // Animate stats counting
-    const statNumbers = document.querySelectorAll('.stat-number');
-    const speed = 200;
-    
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-count'));
-        const count = parseInt(stat.textContent);
-        const increment = target / speed;
+    // Laad tabeldata
+    function loadTableData(data) {
+        rankingTable.innerHTML = '';
         
-        if (count < target) {
-            const timer = setInterval(() => {
-                stat.textContent = Math.floor(parseInt(stat.textContent) + increment);
-                if (parseInt(stat.textContent) >= target) {
-                    stat.textContent = target;
-                    clearInterval(timer);
-                }
-            }, 1);
-        } else {
-            stat.textContent = target;
-        }
-    });
+        data.forEach(player => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${player.rank}</td>
+                <td>
+                    <div class="player-cell">
+                        <img src="https://mc-heads.net/avatar/${player.name}/32" 
+                             alt="${player.name}" 
+                             class="player-avatar"
+                             onerror="this.src='https://mc-heads.net/avatar/MHF_Steve/32'">
+                        ${player.name}
+                    </div>
+                </td>
+                <td><span class="tier-badge tier-${player.tier}">${player.tier}</span></td>
+                <td>${formatDate(player.updated)}</td>
+                <td><button class="view-player-btn" data-name="${player.name}">
+                    <i class="fas fa-eye"></i> Bekijk
+                </button></td>
+            `;
+            rankingTable.appendChild(row);
+        });
 
-    // Copy IP button
-    const copyBtn = document.querySelector('.copy-ip-btn');
-    if (copyBtn) {
-        copyBtn.addEventListener('click', function() {
-            const ip = 'play.lifestealnl.nl';
-            navigator.clipboard.writeText(ip).then(() => {
-                copyBtn.innerHTML = '<i class="fas fa-check"></i> Gekopieerd!';
-                setTimeout(() => {
-                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Kopieer IP';
-                }, 2000);
+        // Voeg event listeners toe aan knoppen
+        document.querySelectorAll('.view-player-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const playerName = this.getAttribute('data-name');
+                showPlayerModal(playerName);
             });
         });
     }
 
-    // Button hover effects
-    const buttons = document.querySelectorAll('.cta-button, .link-card, .feature-card');
-    
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Active nav link
-    const currentPage = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('.main-nav a');
-    
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
-
-    // Discord member count (placeholder - you would need to use Discord API for real count)
-    const discordCount = document.getElementById('discord-count');
-    if (discordCount) {
-        discordCount.textContent = '(1.2k+ leden)';
+    // Formatteer datum
+    function formatDate(dateString) {
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString('nl-NL', options);
     }
+
+    // Zoek functionaliteit
+    function searchPlayers() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        if (searchTerm === '') {
+            loadTableData(playerData);
+            return;
+        }
+
+        const filteredPlayers = playerData.filter(player => 
+            player.name.toLowerCase().includes(searchTerm) ||
+            player.tier.toLowerCase().includes(searchTerm)
+        );
+        
+        if (filteredPlayers.length === 0) {
+            rankingTable.innerHTML = `<tr><td colspan="5" class="no-results">Geen spelers gevonden voor "${searchTerm}"</td></tr>`;
+        } else {
+            loadTableData(filteredPlayers);
+        }
+    }
+
+    // Toon player modal
+    function showPlayerModal(playerName) {
+        const player = playerData.find(p => p.name === playerName);
+        if (!player) return;
+
+        // Basis info
+        modalName.textContent = player.name;
+        modalTier.textContent = player.tier;
+        modalTier.className = `tier-badge tier-${player.tier}`;
+        modalSkin.src = `https://mc-heads.net/body/${player.name}`;
+        modalSkin.alt = `${player.name}'s skin`;
+
+        playerModal.style.display = 'block';
+    }
+
+    // Sluit modal
+    function closePlayerModal() {
+        playerModal.style.display = 'none';
+    }
+
+    // Event listeners
+    searchButton.addEventListener('click', searchPlayers);
+    searchInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') searchPlayers();
+    });
+    closeModal.addEventListener('click', closePlayerModal);
+    window.addEventListener('click', function(e) {
+        if (e.target === playerModal) closePlayerModal();
+    });
+
+    // Laad initiële data
+    loadTableData(playerData);
+
+    // Voeg een kleine delay toe voor de animatie
+    setTimeout(() => {
+        document.querySelectorAll('tr').forEach((row, index) => {
+            row.style.opacity = '0';
+            row.style.animation = `fadeIn 0.3s ${index * 0.1}s forwards`;
+        });
+    }, 100);
 });
