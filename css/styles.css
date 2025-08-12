@@ -1258,3 +1258,15 @@ tr {
     position: relative;
     z-index: 30; /* Zorgt dat links klikbaar zijn */
 }
+
+/* Voeg dit toe aan je styles.css bestand */
+.features-section {
+    padding-top: 50px; /* Verklein deze waarde naar wens */
+    margin-top: 0; /* Zorg ervoor dat dit 0 is */
+}
+
+/* Optioneel: als je nog meer ruimte wilt verwijderen */
+.hero-header {
+    padding-bottom: 30px; /* Verklein deze waarde indien nodig */
+}
+

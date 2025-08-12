@@ -2,20 +2,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Alle Minecraft namen uit de Discord chat + geteste spelers
     const allPlayers = [
         // Geteste spelers met hun tiers
-        { name: "Chickenfighter50", tier: "F" },
-        { name: "Doevie", tier: "B" },
         { name: "Hidspot", tier: "S" },
         { name: "banzy_", tier: "S" },
+        { name: "MimiBoy15", tier: "A" },
+        { name: "crxnsio", tier: "A" },
+        { name: "Doevie", tier: "B" },
+        { name: "ToonDrone", tier: "B" },
         { name: "Mettix", tier: "C" },
         { name: "BADPAKonTT", tier: "C" },
-        { name: "MimiBoy15", tier: "A" },
-        { name: "ItzTrazyyy", tier: "D" },
-        { name: "crxnsio", tier: "A" },
-        { name: "mexz", tier: "D" },
-        { name: "ToonDrone", tier: "B" },
-        { name: "oEntityz", tier: "D" },
         { name: "zaylz", tier: "C" },
+        { name: "ItzTrazyyy", tier: "D" },
+        { name: "mexz", tier: "D" },
+        { name: "oEntityz", tier: "D" },
         { name: "Skibidi_diogo", tier: "D" },
+        { name: "Chickenfighter50", tier: "F" },
         
         // Overige spelers (unranked)
         "Fla3m", "Jurreflorisrobi", "Zenderlink", "Druxiz", "flob1n_", 
