@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Geteste spelers met hun tiers
         { name: "Hidspot", tier: "S" },
         { name: "banzy_", tier: "S" },
+        { name: "Hlppo", tier: "S" },        
         { name: "MimiBoy15", tier: "A" },
         { name: "crxnsio", tier: "A" },
         { name: "Doevie", tier: "B" },
