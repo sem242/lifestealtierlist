@@ -1214,3 +1214,30 @@ tr {
 .rank-cell.d-tier { background-color: #00cc66; color: #333; }
 .rank-cell.f-tier { background-color: #999; color: #333; }
 .rank-cell.unranked-tier { background-color: #333; color: #999; }
+
+/* Modal test info styling */
+.tested-info, .untested-info {
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.tested-info {
+    background-color: rgba(0, 100, 0, 0.2);
+    border-left: 4px solid #00cc66;
+}
+
+.untested-info {
+    background-color: rgba(128, 128, 128, 0.2);
+    border-left: 4px solid #999;
+}
+
+.tested-info h4, .untested-info h4 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.tested-info p, .untested-info p {
+    color: #ccc;
+    font-size: 0.9rem;
+}

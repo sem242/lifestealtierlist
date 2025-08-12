@@ -1,11 +1,63 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const playerData = [
-        { rank: 1, name: "Player1", tier: "S", updated: "2023-07-15" },
-        { rank: 2, name: "Player2", tier: "A", updated: "2023-07-14" },
-        { rank: 3, name: "Player3", tier: "B", updated: "2023-07-13" },
-        { rank: 4, name: "Player4", tier: "C", updated: "2023-07-12" },
-        { rank: 5, name: "Player5", tier: "D", updated: "2023-07-11" }
+    // Alle Minecraft namen uit de Discord chat + geteste spelers
+    const allPlayers = [
+        // Geteste spelers met hun tiers
+        { name: "Chickenfighter50", tier: "F" },
+        { name: "Doevie", tier: "B" },
+        { name: "Hidspot", tier: "S" },
+        { name: "banzy_", tier: "S" },
+        { name: "Mettix", tier: "C" },
+        { name: "BADPAKonTT", tier: "C" },
+        { name: "MimiBoy15", tier: "A" },
+        { name: "ItzTrazyyy", tier: "D" },
+        { name: "crxnsio", tier: "A" },
+        { name: "mexz", tier: "D" },
+        { name: "ToonDrone", tier: "B" },
+        { name: "oEntityz", tier: "D" },
+        { name: "zaylz", tier: "C" },
+        { name: "Skibidi_diogo", tier: "D" },
+        
+        // Overige spelers (unranked)
+        "Fla3m", "Jurreflorisrobi", "Zenderlink", "Druxiz", "flob1n_", 
+        "Ems3y", "jthpower", "404Mat", "Broodkaas", "Smotserela", 
+        "Extra_Me", "Xenoary", "LukasMan2", "TIBOWWW_", "Wekko_", 
+        "Demistic", "MrPaketJup", "Danoontjuhhh", "MathiasXD_", "Availqble_", 
+        "Freakyfreaker", "1xVoidz", "SK_Milo123", "Bl1kje", "FlobiZ15", 
+        "Rxiq", "Daanbas7", "Gamer_xd_pro_200", "VINCE043", "Robbie_1234", 
+        "bestdutchperson", "qu1ck3d", "DinobeastYT", "babber_", "JJaden2024", 
+        "3746", "SWIPEEEEE", "Fletiofrags", "Cleonekuh12", "Kloas_Tossel", 
+        "xmandv", "Wickedfire75", "S_vdn_", "frost658", "Jason12379", 
+        "vLuca_", "Poplolsa", "Rqspect", "GGin01", "zNixls_", 
+        "Magicify", "Tijd_Teveel", "TippieToepie", "FS_Straid", "Insane_guy957", 
+        "xzpricklyzx", "JSTRED", "Enfuindhdd", "Snellephilip", "romigkoenkie", 
+        "llynix", "GrasSprietjuh", "FW_Teru", "FlyingDutchy2", "Noudddddino", 
+        "sm75851", "Molberts1", "_Lebrontheking_", "Egirlstarzy", "MoaningMan69", 
+        "Matthiezzz", "Leonekuh12", "wrapSD", "pxraiso", "MiDeathhh", 
+        "Kuspim", "Vogelkak"
     ];
+
+    // Maak playerData array met ranks en tiers
+    const playerData = allPlayers.map((player, index) => {
+        if (typeof player === 'object') {
+            // Dit is een geteste speler met tier info
+            return {
+                rank: index + 1,
+                name: player.name,
+                tier: player.tier,
+                updated: new Date().toISOString().split('T')[0],
+                tested: true
+            };
+        } else {
+            // Dit is een unranked speler
+            return {
+                rank: index + 1,
+                name: player,
+                tier: "UNRANKED",
+                updated: new Date().toISOString().split('T')[0],
+                tested: false
+            };
+        }
+    });
 
     // DOM elementen
     const rankingTable = document.getElementById('ranking-data');
@@ -16,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalSkin = document.getElementById('modal-skin');
     const modalName = document.getElementById('modal-name');
     const modalTier = document.getElementById('modal-tier');
+    const modalTestInfo = document.getElementById('modal-test-info');
 
     // Tier kleuren mapping
     const tierColors = {
@@ -24,7 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'B': 'b-tier',
         'C': 'c-tier',
         'D': 'd-tier',
-        'F': 'f-tier'
+        'F': 'f-tier',
+        'UNRANKED': 'unranked-tier'
     };
 
     // Laad tabeldata
@@ -34,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data.forEach(player => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td class="rank-cell ${tierColors[player.tier] || 'unranked-tier'}">${player.rank}</td>
+                <td class="rank-cell ${tierColors[player.tier]}">${player.rank}</td>
                 <td>
                     <div class="player-cell">
                         <img src="https://mc-heads.net/avatar/${player.name}/32" 
@@ -44,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${player.name}
                     </div>
                 </td>
-                <td><span class="tier-badge ${tierColors[player.tier] || 'unranked-tier'}">${player.tier}</span></td>
+                <td><span class="tier-badge ${tierColors[player.tier]}">${player.tier}</span></td>
                 <td>${formatDate(player.updated)}</td>
                 <td><button class="view-player-btn" data-name="${player.name}">
                     <i class="fas fa-eye"></i> Bekijk
@@ -96,9 +150,26 @@ document.addEventListener('DOMContentLoaded', function() {
         // Basis info
         modalName.textContent = player.name;
         modalTier.textContent = player.tier;
-        modalTier.className = `tier-badge ${tierColors[player.tier] || 'unranked-tier'}`;
+        modalTier.className = `tier-badge ${tierColors[player.tier]}`;
         modalSkin.src = `https://mc-heads.net/body/${player.name}`;
         modalSkin.alt = `${player.name}'s skin`;
+
+        // Extra info voor geteste spelers
+        if (player.tested) {
+            modalTestInfo.innerHTML = `
+                <div class="tested-info">
+                    <h4>Geteste Speler</h4>
+                    <p>Deze speler heeft een officiële tier ranking.</p>
+                </div>
+            `;
+        } else {
+            modalTestInfo.innerHTML = `
+                <div class="untested-info">
+                    <h4>Nog niet getest</h4>
+                    <p>Deze speler heeft nog geen officiële tier ranking.</p>
+                </div>
+            `;
+        }
 
         playerModal.style.display = 'block';
     }
@@ -125,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         document.querySelectorAll('tr').forEach((row, index) => {
             row.style.opacity = '0';
-            row.style.animation = `fadeIn 0.3s ${index * 0.1}s forwards`;
+            row.style.animation = `fadeIn 0.3s ${index * 0.05}s forwards`;
         });
     }, 100);
 });
