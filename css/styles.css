@@ -1241,3 +1241,20 @@ tr {
     color: #ccc;
     font-size: 0.9rem;
 }
+
+/* Fix voor header z-index */
+.hero-header {
+    position: relative;
+    z-index: 10; /* Zorgt dat header boven particles komt */
+}
+
+/* Fix voor navigatie links */
+.header-top {
+    position: relative;
+    z-index: 20; /* Nog hoger dan de hero-header */
+}
+
+.main-nav a {
+    position: relative;
+    z-index: 30; /* Zorgt dat links klikbaar zijn */
+}
