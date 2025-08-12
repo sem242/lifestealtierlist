@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: { value: 0.5, random: true },
                 size: { value: 3, random: true },
                 line_linked: { enable: true, distance: 150, color: "#ff0000", opacity: 0.3, width: 1 },
-                move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
+                move: { enable: true, speed: 3 }
             },
             interactivity: {
                 detect_on: "canvas",
@@ -28,56 +28,51 @@ document.addEventListener('DOMContentLoaded', function() {
     
     statNumbers.forEach(stat => {
         const target = parseInt(stat.getAttribute('data-count'));
-        const count = parseInt(stat.textContent);
         const increment = target / speed;
         
-        if (count < target) {
-            const timer = setInterval(() => {
-                stat.textContent = Math.floor(parseInt(stat.textContent) + increment);
-                if (parseInt(stat.textContent) >= target) {
-                    stat.textContent = target;
-                    clearInterval(timer);
-                }
-            }, 1);
-        } else {
-            stat.textContent = target;
-        }
+        let count = 0;
+        const timer = setInterval(() => {
+            count += increment;
+            if (count >= target) {
+                count = target;
+                clearInterval(timer);
+            }
+            stat.textContent = Math.floor(count);
+        }, 10);
     });
 
-    // Copy IP button
-    const copyBtn = document.querySelector('.copy-ip-btn');
-    if (copyBtn) {
-        copyBtn.addEventListener('click', function() {
-            const ip = 'play.lifestealnl.nl';
-            navigator.clipboard.writeText(ip).then(() => {
-                copyBtn.innerHTML = '<i class="fas fa-check"></i> Gekopieerd!';
-                setTimeout(() => {
-                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Kopieer IP';
-                }, 2000);
-            });
-        });
+    // Countdown timer for Season 3
+    const countdownEl = document.getElementById('countdown');
+    const targetDate = new Date("Aug 12, 2025 20:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+            countdownEl.innerHTML = "LIVE!";
+            return;
+        }
+
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.innerHTML = `${hours}u ${minutes}m ${seconds}s`;
     }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 
-    // Button hover effects
-    const buttons = document.querySelectorAll('.cta-button, .link-card, .feature-card');
-    
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
+    // Discord member count
+    fetch("https://discord.com/api/v9/invites/Gn9wHhrx7t?with_counts=true")
+        .then(res => res.json())
+        .then(data => {
+            const count = data.approximate_member_count || 0;
+            document.getElementById('discord-members').textContent = `(${count} leden)`;
+            document.getElementById('discord-members-btn').textContent = `(${count} leden)`;
+        })
+        .catch(() => {
+            document.getElementById('discord-members').textContent = '';
+            document.getElementById('discord-members-btn').textContent = '';
         });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Active nav link
-    const currentPage = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('.main-nav a');
-    
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
 });

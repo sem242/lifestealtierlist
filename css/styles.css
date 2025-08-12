@@ -1048,3 +1048,28 @@ footer p {
         font-size: 2.5rem;
     }
 }
+
+/* Extra aanpassingen voor nieuwe layout */
+.discord-btn-large,
+.cta-button.discord-large {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(135deg, #5865F2 0%, #4752c4 100%);
+    color: white;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.discord-btn-large:hover,
+.cta-button.discord-large:hover {
+    background: #4752c4;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(88, 101, 242, 0.4);
+}
+
+.small-top-margin {
+    padding-top: 2rem !important;
+}
