@@ -1,0 +1,25 @@
+# .gitignore
+
+# 1. Omgevingsvariabelen & gevoelige data
+.env
+.env.local
+.env*.local
+
+# 2. Databaseconfiguraties (bijv. lokale backups)
+*.sql
+*.dump
+
+# 3. Node.js / dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# 4. Editor- en IDE-specifieke bestanden
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 5. Systeemspecifieke bestanden (optioneel)
+.DS_Store
+Thumbs.db
