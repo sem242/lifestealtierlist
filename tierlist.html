@@ -7,6 +7,335 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .tierlist-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 15px;
+        }
+        
+        .tierlist-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .tierlist-header h1 {
+            color: #ff0000;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Oxanium', sans-serif;
+        }
+        
+        .tierlist-header p {
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .ranking-container {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: #1a0000;
+            color: #ff0000;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-family: 'Oxanium', sans-serif;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #222;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #252525;
+        }
+        
+        tr:hover {
+            background-color: #333;
+        }
+        
+        .player-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .player-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #333;
+            border: 2px solid #ff0000;
+        }
+        
+        .tier-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .s-tier { background: #ff0000; color: white; }
+        .a-tier { background: #ff6600; color: white; }
+        .b-tier { background: #ffcc00; color: #333; }
+        .c-tier { background: #0099ff; color: white; }
+        .d-tier { background: #00cc66; color: #333; }
+        .f-tier { background: #999; color: #333; }
+        .unranked-tier { background: #333; color: #999; }
+        
+        .view-player-btn {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.3s;
+        }
+        
+        .view-player-btn:hover {
+            background: #ff0000;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            background-color: #111;
+            margin: 10% auto;
+            padding: 25px;
+            border: 3px solid #ff0000;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 350px;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            color: #aaa;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover {
+            color: white;
+        }
+        
+        .skin-display {
+            margin: 15px auto;
+            width: 150px;
+            height: 200px;
+        }
+        
+        .skin-image {
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+            object-fit: cover;
+        }
+        
+        .tier-display {
+            margin: 15px 0;
+            font-size: 1.2em;
+        }
+        
+        .test-info {
+            margin-top: 15px;
+            padding: 10px;
+            background: #222;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        
+        /* Testers Section */
+        .testers-section {
+            background: linear-gradient(135deg, #861c1c 0%, #f89595 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px auto;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            max-width: 1200px;
+        }
+        
+        .testers-section h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            font-family: 'Oxanium', sans-serif;
+        }
+        
+        .testers-scroll-container {
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        
+        .testers-row {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            padding: 10px;
+            margin: 0 auto;
+        }
+        
+        .tester-card {
+            background: #612f2f;
+            border-radius: 10px;
+            min-width: 180px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #444;
+            flex-shrink: 0;
+        }
+        
+        .tester-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tester-skin {
+            background: #612f2f;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 140px;
+            border-bottom: 2px solid #333;
+        }
+        
+        .full-skin {
+            height: 120px;
+            image-rendering: pixelated;
+            transition: transform 0.3s ease;
+        }
+        
+        .tester-card:hover .full-skin {
+            transform: scale(1.05);
+        }
+        
+        .tester-info {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .tester-info h3 {
+            color: #fff;
+            margin: 0 0 8px 0;
+            font-size: 1.2rem;
+            font-family: 'Oxanium', sans-serif;
+        }
+        
+        .tester-role {
+            color: #ffcc00;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            background: rgba(255, 204, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+        
+        /* Search Container */
+        .search-container {
+            display: flex;
+            margin: 2rem auto;
+            background: #111;
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid #333;
+            max-width: 600px;
+        }
+        
+        #search-input {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        #search-button {
+            padding: 0 1.5rem;
+            background: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        #search-button:hover {
+            background: #cc0000;
+        }
+        
+        /* Tested Info */
+        .tested-info, .untested-info {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .tested-info {
+            background-color: rgba(0, 100, 0, 0.2);
+            border-left: 4px solid #00cc66;
+        }
+        
+        .untested-info {
+            background-color: rgba(128, 128, 128, 0.2);
+            border-left: 4px solid #999;
+        }
+        
+        .tested-info h4, .untested-info h4 {
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .tested-info p, .untested-info p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 <header class="main-header">
@@ -21,7 +350,7 @@
             <a href="events.html">Events</a>
             <a href="staff.html">Staff</a>
             <a href="index.html">Home</a>
-            <a href="tierlist.html">Tierlist</a>
+            <a href="tierlist.html" class="active">Tierlist</a>
             <a href="regels.html">Regels</a>
         </nav>
         
@@ -31,96 +360,133 @@
     </div>
 </header>
 
-    <main class="container">
-        <!-- Testers sectie toegevoegd -->
-<!-- In je HTML, vervang de testers-section met dit: -->
-<div class="testers-section">
-    <h2><i class="fas fa-star"></i> Officiële Testers <i class="fas fa-star"></i></h2>
-    <div class="testers-scroll-container">
-        <div class="testers-row">
-            <div class="tester-card">
-                <div class="tester-skin">
-                    <img src="https://mc-heads.net/body/Hidspot" alt="Hidspot" class="full-skin">
-                </div>
-                <div class="tester-info">
-                    <h3>Hidspot</h3>
-                    <div class="tester-role">
-                        <i class="fas fa-crown"></i> Hoofd Tester
+<main class="tierlist-container">
+    <div class="tierlist-header">
+        <h1>Speler Tierlist</h1>
+        <p>Bekijk de ranking van alle spelers op onze server. Geteste spelers hebben een officiële tier ranking.</p>
+    </div>
+
+    <!-- Testers sectie -->
+    <div class="testers-section">
+        <h2><i class="fas fa-star"></i> Officiële Testers <i class="fas fa-star"></i></h2>
+        <div class="testers-scroll-container">
+            <div class="testers-row">
+                <div class="tester-card">
+                    <div class="tester-skin">
+                        <img src="https://mc-heads.net/body/Hidspot" alt="Hidspot" class="full-skin">
+                    </div>
+                    <div class="tester-info">
+                        <h3>Hidspot</h3>
+                        <div class="tester-role">
+                            <i class="fas fa-crown"></i> Hoofd Tester
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="tester-card">
-                <div class="tester-skin">
-                    <img src="https://mc-heads.net/body/banzy_" alt="banzy_" class="full-skin">
-                </div>
-                <div class="tester-info">
-                    <h3>banzy_</h3>
-                    <div class="tester-role">
-                        <i class="fas fa-shield-alt"></i> Senior Tester
+                
+                <div class="tester-card">
+                    <div class="tester-skin">
+                        <img src="https://mc-heads.net/body/banzy_" alt="banzy_" class="full-skin">
+                    </div>
+                    <div class="tester-info">
+                        <h3>banzy_</h3>
+                        <div class="tester-role">
+                            <i class="fas fa-shield-alt"></i> Senior Tester
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="tester-card">
-                <div class="tester-skin">
-                    <img src="https://mc-heads.net/body/Hlppo" alt="Hlppo" class="full-skin">
-                </div>
-                <div class="tester-info">
-                    <h3>Hlppo</h3>
-                    <div class="tester-role">
-                        <i class="fas fa-check-circle"></i> Tester
+                
+                <div class="tester-card">
+                    <div class="tester-skin">
+                        <img src="https://mc-heads.net/body/Hlppo" alt="Hlppo" class="full-skin">
+                    </div>
+                    <div class="tester-info">
+                        <h3>Hlppo</h3>
+                        <div class="tester-role">
+                            <i class="fas fa-check-circle"></i> Tester
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Zoek spelers...">
+        <button id="search-button"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="ranking-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>RANK</th>
+                    <th>SPELER</th>
+                    <th>TIER</th>
+                    <th>BIJGEWERKT</th>
+                    <th>ACTIE</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-data">
+                <!-- Data wordt hier geladen via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- Player Modal -->
+<div id="player-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="skin-display">
+            <img id="modal-skin" src="" alt="Minecraft Skin" class="skin-image">
+        </div>
+        <h2 id="modal-name"></h2>
+        <div class="tier-display">
+            Tier: <span id="modal-tier" class="tier-badge"></span>
+        </div>
+        <div id="modal-test-info" class="test-info"></div>
     </div>
 </div>
 
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Zoek spelers...">
-            <button id="search-button"><i class="fas fa-search"></i></button>
-        </div>
-
-        <div class="ranking-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>RANK</th>
-                        <th>SPELER</th>
-                        <th>TIER</th>
-                        <th>BIJGEWERKT</th>
-                        <th>ACTIE</th>
-                    </tr>
-                </thead>
-                <tbody id="ranking-data">
-                    <!-- Data wordt hier geladen via JavaScript -->
-                </tbody>
-            </table>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>© 2023 LIFESTEALNL | GEEN OFFICIELE MINECRAFT SERVER</p>
-        </div>
-    </footer>
-
-    <!-- Player Modal -->
-    <div id="player-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="skin-display">
-                <img id="modal-skin" src="" alt="Minecraft Skin" class="skin-image">
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">LIFESTEAL</span><span class="logo-highlight">NL</span>
+                <p>De beste Nederlandse Lifesteal server</p>
             </div>
-            <h2 id="modal-name"></h2>
-            <div class="tier-display">
-                Tier: <span id="modal-tier" class="tier-badge"></span>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Server</h4>
+                    <a href="tierlist.html"><i class="fas fa-chevron-right"></i> Tierlist</a>
+                    <a href="regels.html"><i class="fas fa-chevron-right"></i> Regels</a>
+                    <a href="events.html"><i class="fas fa-chevron-right"></i> Events</a>
+                </div>
+                
+                <div class="link-group">
+                    <h4>Community</h4>
+                    <a href="https://discord.gg/Gn9wHhrx7t"><i class="fas fa-chevron-right"></i> Discord</a>
+                    <a href="https://www.tiktok.com/@lifestealnl"><i class="fas fa-chevron-right"></i> TikTok</a>
+                </div>
             </div>
-            <div id="modal-test-info" class="test-info"></div>
+            
+            <div class="server-ip-box">
+                <h4>Server IP</h4>
+                <div class="ip-display">play.lifestealnl.nl</div>
+                <button class="copy-ip-btn">
+                    <i class="fas fa-copy"></i> Kopieer IP
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 LIFESTEALNL | SEASON 3 | GEEN OFFICIELE MINECRAFT SERVER</p>
         </div>
     </div>
+</footer>
 
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
