@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Complete spelerdata
     const playerData = [
         // Geteste spelers
-        { name: "emmer_water", tier: "S", tested: true },
         { name: "Hidspot", tier: "S", tested: true },
         { name: "banzy_", tier: "S", tested: true },
         { name: "Hlppo", tier: "S", tested: true },
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Enfuindhdd", "Snellephilip", "romigkoenkie", "llynix", "GrasSprietjuh", 
         "FW_Teru", "FlyingDutchy2", "Noudddddino", "Molberts1", "_Lebrontheking_", 
         "Egirlstarzy", "MoaningMan69", "Matthiezzz", "Leonekuh12", "wrapSD", 
-        "pxraiso", "MiDeathhh", "Kuspim", "Vogelkak", "Angelotijger"
+        "pxraiso", "MiDeathhh", "Kuspim", "Vogelkak", "Angelotijger", "emmer_water", "Vicious_kiwi"
     ].map((player, index) => {
         if (typeof player === 'object') {
             return {
