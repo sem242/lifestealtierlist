@@ -14,13 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Hlppo", tier: "S", tested: true },
         { name: "MimiBoy15", tier: "A", tested: true },
         { name: "crxnsio", tier: "A", tested: true },
+        { name: "Druxiz", tier: "A", tested: true },        
         { name: "Doevie", tier: "B", tested: true },
         { name: "ToonDrone", tier: "B", tested: true },
+        { name: "Kuspim", tier: "B", tested: true },
         { name: "Mettix", tier: "C", tested: true },
         { name: "BADPAKonTT", tier: "C", tested: true },
         { name: "zaylz", tier: "C", tested: true },
         { name: "sm75851", tier: "C", tested: true },
         { name: "Gamer_xd_pro_200", tier: "C", tested: true },
+        { name: "llynix", tier: "C", tested: true },
         { name: "ItzTrazyyy", tier: "D", tested: true },
         { name: "mexz", tier: "D", tested: true },
         { name: "oEntityz", tier: "D", tested: true },
@@ -29,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Chickenfighter50", tier: "F", tested: true },
         
         // Ongeteste spelers
-        "Fla3m", "Jurreflorisrobi", "Zenderlink", "Druxiz", "flob1n_", 
+        "Fla3m", "Jurreflorisrobi", "Zenderlink", "flob1n_", 
         "jthpower", "404Mat", "Broodkaas", "Smotserela", "Extra_Me", 
         "Xenoary", "LukasMan2", "TIBOWWW_", "Wekko_", "Demistic", 
         "MrPaketJup", "Danoontjuhhh", "MathiasXD_", "Availqble_", "Freakyfreaker", 
@@ -40,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
         "S_vdn_", "frost658", "Jason12379", "vLuca_", "Poplolsa", 
         "Rqspect", "GGin01", "zNixls_", "Magicify", "Tijd_Teveel", 
         "TippieToepie", "FS_Straid", "Insane_guy957", "xzpricklyzx", "JSTRED", 
-        "Enfuindhdd", "Snellephilip", "romigkoenkie", "llynix", "GrasSprietjuh", 
+        "Enfuindhdd", "Snellephilip", "romigkoenkie", "GrasSprietjuh", 
         "FW_Teru", "FlyingDutchy2", "Noudddddino", "Molberts1", "_Lebrontheking_", 
         "Egirlstarzy", "MoaningMan69", "Matthiezzz", "Leonekuh12", "wrapSD", 
-        "pxraiso", "MiDeathhh", "Kuspim", "Vogelkak", "Angelotijger", "emmer_water", "Vicious_kiwi"
+        "pxraiso", "MiDeathhh", "Vogelkak", "Angelotijger", "emmer_water", "Vicious_kiwi"
     ].map((player, index) => {
         if (typeof player === 'object') {
             return {
