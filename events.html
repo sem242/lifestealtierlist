@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifestealNL | Server Opening</title>
+    <title>LifestealNL | Server Events</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Events specifieke stijlen */
         .events-container {
             max-width: 800px;
             margin: 2rem auto;
             text-align: center;
+            padding: 20px;
         }
         
         .event-card {
@@ -92,6 +92,7 @@
         }
     </style>
 </head>
+<body>
 <header class="main-header">
     <div class="container">
         <a href="index.html" class="logo">
@@ -113,4 +114,92 @@
         </button>
     </div>
 </header>
-          
+
+<main class="container">
+    <div class="events-container">
+        <div class="event-card">
+            <h2><i class="fas fa-calendar-star"></i> Grand Opening Event</h2>
+            <p>Welkom bij de officiële opening van LifestealNL Season 3! Doe mee aan speciale openingsevenementen en verdien exclusieve beloningen.</p>
+            
+            <div class="event-meta">
+                <div class="event-meta-item">
+                    <i class="fas fa-clock"></i> 15 Augustus 2025
+                </div>
+                <div class="event-meta-item">
+                    <i class="fas fa-map-marker-alt"></i> Spawn Area
+                </div>
+            </div>
+            
+            <div class="countdown">
+                <span id="days">12</span>
+                <span id="hours">05</span>
+                <span id="minutes">47</span>
+                <span id="seconds">22</span>
+            </div>
+            
+            <div class="grace-period">
+                <i class="fas fa-shield-alt"></i> Eerste 48 uur: PVP-bescherming voor nieuwe spelers
+            </div>
+            
+            <a href="#" class="event-btn">Deelnemen</a>
+        </div>
+        
+        <div class="event-card">
+            <h2><i class="fas fa-trophy"></i> Maandelijkse PVP Toernooi</h2>
+            <p>Strijd om de titel van beste PVP'er van de maand en win exclusieve beloningen en een speciale rol op Discord!</p>
+            
+            <div class="event-meta">
+                <div class="event-meta-item">
+                    <i class="fas fa-clock"></i> Elke laatste zaterdag van de maand
+                </div>
+                <div class="event-meta-item">
+                    <i class="fas fa-users"></i> Max. 32 deelnemers
+                </div>
+            </div>
+            
+            <a href="#" class="event-btn">Inschrijven</a>
+        </div>
+    </div>
+</main>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">LIFESTEAL</span><span class="logo-highlight">NL</span>
+                <p>De beste Nederlandse Lifesteal server</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Server</h4>
+                    <a href="tierlist.html"><i class="fas fa-chevron-right"></i> Tierlist</a>
+                    <a href="regels.html"><i class="fas fa-chevron-right"></i> Regels</a>
+                    <a href="events.html"><i class="fas fa-chevron-right"></i> Events</a>
+                </div>
+                
+                <div class="link-group">
+                    <h4>Community</h4>
+                    <a href="https://discord.gg/Gn9wHhrx7t"><i class="fas fa-chevron-right"></i> Discord</a>
+                    <a href="https://www.tiktok.com/@lifestealnl"><i class="fas fa-chevron-right"></i> TikTok</a>
+                </div>
+            </div>
+            
+            <div class="server-ip-box">
+                <h4>Server IP</h4>
+                <div class="ip-display">play.lifestealnl.nl</div>
+                <button class="copy-ip-btn">
+                    <i class="fas fa-copy"></i> Kopieer IP
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 LIFESTEALNL | SEASON 3 | GEEN OFFICIELE MINECRAFT SERVER</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/home.js"></script>
+</body>
+</html>
