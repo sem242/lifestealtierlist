@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "mexz", tier: "D" },
         { name: "oEntityz", tier: "D" },
         { name: "Skibidi_diogo", tier: "D" },
+        { name: "Ems3y", tier: "F" },
         { name: "Chickenfighter50", tier: "F" },
         // Overige spelers (unranked)
         "Fla3m", "Jurreflorisrobi", "Zenderlink", "Druxiz", "flob1n_", 
