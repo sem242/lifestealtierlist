@@ -1,27 +1,16 @@
-// Homepage interacties
 document.addEventListener('DOMContentLoaded', function() {
-    // Particles.js config
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#ff0000" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#ff0000", opacity: 0.3, width: 1 },
-                move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" }
-                }
-            }
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
     }
-
+    
     // Animate stats counting
     const statNumbers = document.querySelectorAll('.stat-number');
     const speed = 200;
@@ -43,41 +32,56 @@ document.addEventListener('DOMContentLoaded', function() {
             stat.textContent = target;
         }
     });
-
+    
+    // Smooth scroll for hero indicator
+    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.features-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    }
+    
     // Copy IP button
     const copyBtn = document.querySelector('.copy-ip-btn');
     if (copyBtn) {
         copyBtn.addEventListener('click', function() {
             const ip = 'play.lifestealnl.nl';
             navigator.clipboard.writeText(ip).then(() => {
+                const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = '<i class="fas fa-check"></i> Gekopieerd!';
                 setTimeout(() => {
-                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Kopieer IP';
+                    copyBtn.innerHTML = originalText;
                 }, 2000);
             });
         });
     }
-
-    // Button hover effects
-    const buttons = document.querySelectorAll('.cta-button, .link-card, .feature-card');
     
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
+    // Add animation to elements when they come into view
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.feature-card, .stat-card, .link-card');
         
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
         });
-    });
-
-    // Active nav link
-    const currentPage = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('.main-nav a');
+    };
     
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
+    // Set initial state for animation
+    const featureCards = document.querySelectorAll('.feature-card, .stat-card, .link-card');
+    featureCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease';
     });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on load
 });
