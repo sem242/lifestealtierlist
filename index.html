@@ -3,64 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifestealNL | Home</title>
+    <title>LifestealNL | Home - Nederlandse Minecraft Lifesteal Server</title>
+    <meta name="description" content="Officiële LifestealNL Minecraft server - De beste Nederlandse Lifesteal ervaring met unieke features en een actieve community.">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Hero Section with Particles -->
-    <div id="particles-js"></div>
-    
-    <header class="hero-header">
+    <!-- Header/Navigation -->
+    <header class="main-header">
         <div class="container">
-            <div class="header-top">
+            <div class="header-content">
                 <div class="logo">
                     <span class="logo-text">LIFESTEAL</span><span class="logo-highlight">NL</span>
                     <span class="logo-sub">SEASON 3</span>
                 </div>
+                
                 <nav class="main-nav">
-                    <a href="index.html" class="active">Home</a>
+                    <a href="events.html" class="active">Events</a>
+                    <a href="staff.html">Staff</a>
+                    <a href="index.html">Home</a>
                     <a href="tierlist.html">Tierlist</a>
                     <a href="regels.html">Regels</a>
-                    <a href="events.html">Events</a>
                 </nav>
-                <div class="socials">
-                    <a href="https://discord.gg/Gn9wHhrx7t" target="_blank" class="discord-btn">
-                        <i class="fab fa-discord"></i> Discord
-                    </a>
-                    <a href="https://www.tiktok.com/@lifestealnl" target="_blank" class="tiktok-btn">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="title-gradient">WELKOM BIJ LIFESTEALNL</span>
-                    <span class="title-shadow">WELKOM BIJ LIFESTEALNL</span>
+                    <span class="title-gradient">LIFESTEAL</span>
+                    <span class="title-highlight">NL</span>
                 </h1>
                 <p class="hero-subtitle">De meest intense Minecraft Lifesteal ervaring van Nederland</p>
                 
                 <div class="server-status">
-                    <div class="status-indicator soon"></div>
-                    <span id="countdown">SEASON 3 NOW</span>
+                    <div class="status-indicator online"></div>
+                    <span>SEASON 3 LIVE</span>
+                    <span class="player-count">100+ spelers online</span>
                 </div>
                 
                 <div class="hero-buttons">
-                    <a href="https://discord.gg/Gn9wHhrx7t" class="cta-button discord discord-large">
-                        <i class="fab fa-discord"></i> Word Lid <span id="discord-count"></span>
+                    <a href="#" class="cta-button join-now">
+                        <i class="fas fa-play"></i> Speel Nu
+                    </a>
+                    <a href="https://discord.gg/Gn9wHhrx7t" class="cta-button discord">
+                        <i class="fab fa-discord"></i> Discord
                     </a>
                 </div>
             </div>
         </div>
-    </header>
+        
+        <div class="hero-scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
             <div class="section-header">
-                <h2>WAAROM LIFESTEALNL?</h2>
+                <h2>Waarom LifestealNL?</h2>
                 <p>Ontdek wat onze server uniek maakt</p>
             </div>
             
@@ -70,7 +83,8 @@
                         <i class="fas fa-heart-crack"></i>
                     </div>
                     <h3>Echte Lifesteal</h3>
-                    <p>Verzamel harten door te doden en verlies ze wanneer je sterft - elke actie telt!</p>
+                    <p>Verzamel harten door te doden en verlies ze wanneer je sterft. Elke actie telt in deze intense gameplay!</p>
+                    <div class="feature-wave"></div>
                 </div>
                 
                 <div class="feature-card">
@@ -78,7 +92,8 @@
                         <i class="fas fa-trophy"></i>
                     </div>
                     <h3>Competitief</h3>
-                    <p>Dynamische tierlist en ranking systeem om je skills te testen tegen anderen.</p>
+                    <p>Dynamische tierlist en ranking systeem om je skills te testen tegen de beste spelers.</p>
+                    <div class="feature-wave"></div>
                 </div>
                 
                 <div class="feature-card">
@@ -86,7 +101,8 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Anti-Cheat</h3>
-                    <p>Geavanceerde bescherming tegen cheaters voor een eerlijke ervaring.</p>
+                    <p>Geavanceerde bescherming tegen cheaters voor een 100% eerlijke ervaring voor iedereen.</p>
+                    <div class="feature-wave"></div>
                 </div>
             </div>
         </div>
@@ -97,13 +113,23 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number" data-count="100">100</div>
-                    <div class="stat-label">Actieve Spelers</div>
+                    <div class="stat-number" data-count="1000">0</div>
+                    <div class="stat-label">Dagelijkse spelers</div>
                 </div>
                 
                 <div class="stat-card">
-                    <div class="stat-number" data-count="3">3</div>
+                    <div class="stat-number" data-count="3">0</div>
                     <div class="stat-label">Seizoenen</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-label">Uptime per dag</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Actieve staff</div>
                 </div>
             </div>
         </div>
@@ -114,6 +140,7 @@
         <div class="container">
             <div class="links-grid">
                 <a href="tierlist.html" class="link-card tierlist">
+                    <div class="link-overlay"></div>
                     <div class="link-content">
                         <i class="fas fa-trophy"></i>
                         <h3>Tierlist</h3>
@@ -122,10 +149,20 @@
                 </a>
                 
                 <a href="regels.html" class="link-card rules">
+                    <div class="link-overlay"></div>
                     <div class="link-content">
                         <i class="fas fa-book"></i>
                         <h3>Regels</h3>
                         <p>Leer de server regels</p>
+                    </div>
+                </a>
+                
+                <a href="events.html" class="link-card events">
+                    <div class="link-overlay"></div>
+                    <div class="link-content">
+                        <i class="fas fa-calendar-star"></i>
+                        <h3>Events</h3>
+                        <p>Komende evenementen</p>
                     </div>
                 </a>
             </div>
@@ -138,20 +175,21 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <span class="logo-text">LIFESTEAL</span><span class="logo-highlight">NL</span>
+                    <p>De beste Nederlandse Lifesteal server</p>
                 </div>
                 
                 <div class="footer-links">
                     <div class="link-group">
                         <h4>Server</h4>
-                        <a href="join.html">Join</a>
-                        <a href="regels.html">Regels</a>
-                        <a href="tierlist.html">Tierlist</a>
+                        <a href="tierlist.html"><i class="fas fa-chevron-right"></i> Tierlist</a>
+                        <a href="regels.html"><i class="fas fa-chevron-right"></i> Regels</a>
+                        <a href="events.html"><i class="fas fa-chevron-right"></i> Events</a>
                     </div>
                     
                     <div class="link-group">
                         <h4>Community</h4>
-                        <a href="https://discord.gg/Gn9wHhrx7t">Discord</a>
-                        <a href="https://www.tiktok.com/@lifestealnl">TikTok</a>
+                        <a href="https://discord.gg/Gn9wHhrx7t"><i class="fas fa-chevron-right"></i> Discord</a>
+                        <a href="https://www.tiktok.com/@lifestealnl"><i class="fas fa-chevron-right"></i> TikTok</a>
                     </div>
                 </div>
                 
@@ -171,7 +209,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/home.js"></script>
 </body>
 </html>
