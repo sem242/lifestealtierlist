@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Mettix", tier: "C" },
         { name: "BADPAKonTT", tier: "C" },
         { name: "zaylz", tier: "C" },
+        { name: "sm75851", tier: "C" },
         { name: "Gamer_xd_pro_200", tier: "C" },
         { name: "ItzTrazyyy", tier: "D" },
         { name: "mexz", tier: "D" },
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Magicify", "Tijd_Teveel", "TippieToepie", "FS_Straid", "Insane_guy957", 
         "xzpricklyzx", "JSTRED", "Enfuindhdd", "Snellephilip", "romigkoenkie", 
         "llynix", "GrasSprietjuh", "FW_Teru", "FlyingDutchy2", "Noudddddino", 
-        "sm75851", "Molberts1", "_Lebrontheking_", "Egirlstarzy", "MoaningMan69", 
+        "Molberts1", "_Lebrontheking_", "Egirlstarzy", "MoaningMan69", 
         "Matthiezzz", "Leonekuh12", "wrapSD", "pxraiso", "MiDeathhh", 
         "Kuspim", "Vogelkak", "Angelotijger"
     ];
