@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Doevie", tier: "B", tested: true },
         { name: "ToonDrone", tier: "B", tested: true },
         { name: "Kuspim", tier: "B", tested: true },
+        { name: "Broodkaas", tier: "C", tested: true },
         { name: "Mettix", tier: "C", tested: true },
         { name: "BADPAKonTT", tier: "C", tested: true },
         { name: "zaylz", tier: "C", tested: true },
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Ongeteste spelers
         "Fla3m", "Jurreflorisrobi", "Zenderlink", "flob1n_", 
-        "jthpower", "404Mat", "Broodkaas", "Smotserela", "Extra_Me", 
+        "jthpower", "404Mat", "Smotserela", "Extra_Me", 
         "Xenoary", "LukasMan2", "TIBOWWW_", "Wekko_", "Demistic", 
         "MrPaketJup", "Danoontjuhhh", "MathiasXD_", "Availqble_", "Freakyfreaker", 
         "1xVoidz", "SK_Milo123", "Bl1kje", "FlobiZ15", "Rxiq", 
