@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Complete spelerdata
     const playerData = [
         // Geteste spelers
+        { name: "emmer_water", tier: "S", tested: true },
         { name: "Hidspot", tier: "S", tested: true },
         { name: "banzy_", tier: "S", tested: true },
         { name: "Hlppo", tier: "S", tested: true },
