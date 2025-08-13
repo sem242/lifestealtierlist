@@ -9,213 +9,124 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<header class="main-header">
-    <div class="container">
-        <a href="index.html" class="logo">
-            <span class="logo-text">LIFESTEAL</span>
-            <span class="logo-highlight">NL</span>
-            <span class="logo-sub">SEASON 3</span>
-        </a>
-        
-        <nav class="main-nav">
-            <a href="events.html">Events</a>
-            <a href="staff.html">Staff</a>
-            <a href="index.html">Home</a>
-            <a href="tierlist.html">Tierlist</a>
-            <a href="regels.html">Regels</a>
-        </nav>
-        
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-</header>
-
-<main class="container">
-    <div class="testers-section">
-        <h2><i class="fas fa-star"></i> Officiële Testers <i class="fas fa-star"></i></h2>
-        <div class="testers-scroll-container">
-            <div class="testers-row">
-                <div class="tester-card">
-                    <div class="tester-skin">
-                        <img src="https://mc-heads.net/body/404Mat" alt="404Mat" class="full-skin">
-                    </div>
-                    <div class="tester-info">
-                        <h3>404Mat</h3>
-                        <div class="tester-role">
-                            <i class="fas fa-check-circle"></i> Tester
-                        </div>
-                    </div>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <span class="logo-text">LIFESTEAL</span><span class="logo-highlight">NL</span>
                 </div>
-                
-                <div class="tester-card">
-                    <div class="tester-skin">
-                        <img src="https://mc-heads.net/body/WickedFire75" alt="WickedFire75" class="full-skin">
-                    </div>
-                    <div class="tester-info">
-                        <h3>WickedFire75</h3>
-                        <div class="tester-role">
-                            <i class="fas fa-check-circle"></i> Tester
-                        </div>
-                    </div>
+                <nav class="main-nav">
+                    <a href="index.html">Home</a>
+                    <a href="tierlist.html" class="active">Tierlist</a>
+                    <a href="regels.html">Regels</a>
+                    <a href="events.html">Events</a>
+                </nav>
+                <div class="socials">
+                    <a href="https://discord.gg/Gn9wHhrx7t" target="_blank" class="discord-btn">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@lifestealnl" target="_blank" class="tiktok-btn">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
                 </div>
-                
-                <div class="tester-card">
-                    <div class="tester-skin">
-                        <img src="https://mc-heads.net/body/_Rxiq_" alt="_Rxiq_" class="full-skin">
-                    </div>
-                    <div class="tester-info">
-                        <h3>_Rxiq_</h3>
-                        <div class="tester-role">
-                            <i class="fas fa-check-circle"></i> Tester
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="header-content">
+                <h1>TIER LIST</h1>
+                <p>Get tested on Discord</p>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Zoek spelers...">
-        <button id="search-button"><i class="fas fa-search"></i></button>
-    </div>
-
-    <div class="ranking-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>RANK</th>
-                    <th>SPELER</th>
-                    <th>TIER</th>
-                    <th>BIJGEWERKT</th>
-                    <th>ACTIE</th>
-                </tr>
-            </thead>
-            <tbody id="ranking-data">
-                <tr>
-                    <td class="rank-cell s-tier">1</td>
-                    <td>
-                        <div class="player-cell">
-                            <img src="https://mc-heads.net/avatar/Hidspot/32" alt="Hidspot" class="player-avatar">
-                            Hidspot
-                        </div>
-                    </td>
-                    <td><span class="tier-badge s-tier">S</span></td>
-                    <td>12 aug 2025</td>
-                    <td><button class="view-player-btn" data-name="Hidspot"><i class="fas fa-eye"></i> Bekijk</button></td>
-                </tr>
-                <tr>
-                    <td class="rank-cell s-tier">2</td>
-                    <td>
-                        <div class="player-cell">
-                            <img src="https://mc-heads.net/avatar/banzy_/32" alt="banzy_" class="player-avatar">
-                            banzy_
-                        </div>
-                    </td>
-                    <td><span class="tier-badge s-tier">S</span></td>
-                    <td>11 aug 2025</td>
-                    <td><button class="view-player-btn" data-name="banzy_"><i class="fas fa-eye"></i> Bekijk</button></td>
-                </tr>
-                <tr>
-                    <td class="rank-cell a-tier">3</td>
-                    <td>
-                        <div class="player-cell">
-                            <img src="https://mc-heads.net/avatar/MimiBoy15/32" alt="MimiBoy15" class="player-avatar">
-                            MimiBoy15
-                        </div>
-                    </td>
-                    <td><span class="tier-badge a-tier">A</span></td>
-                    <td>10 aug 2025</td>
-                    <td><button class="view-player-btn" data-name="MimiBoy15"><i class="fas fa-eye"></i> Bekijk</button></td>
-                </tr>
-                <tr>
-                    <td class="rank-cell b-tier">4</td>
-                    <td>
-                        <div class="player-cell">
-                            <img src="https://mc-heads.net/avatar/Doevie/32" alt="Doevie" class="player-avatar">
-                            Doevie
-                        </div>
-                    </td>
-                    <td><span class="tier-badge b-tier">B</span></td>
-                    <td>9 aug 2025</td>
-                    <td><button class="view-player-btn" data-name="Doevie"><i class="fas fa-eye"></i> Bekijk</button></td>
-                </tr>
-                <tr>
-                    <td class="rank-cell c-tier">5</td>
-                    <td>
-                        <div class="player-cell">
-                            <img src="https://mc-heads.net/avatar/Mettix/32" alt="Mettix" class="player-avatar">
-                            Mettix
-                        </div>
-                    </td>
-                    <td><span class="tier-badge c-tier">C</span></td>
-                    <td>8 aug 2025</td>
-                    <td><button class="view-player-btn" data-name="Mettix"><i class="fas fa-eye"></i> Bekijk</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</main>
-
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <span class="logo-text">LIFESTEAL</span><span class="logo-highlight">NL</span>
-                <p>De beste Nederlandse Lifesteal server</p>
-            </div>
-            
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>Server</h4>
-                    <a href="tierlist.html"><i class="fas fa-chevron-right"></i> Tierlist</a>
-                    <a href="regels.html"><i class="fas fa-chevron-right"></i> Regels</a>
-                    <a href="events.html"><i class="fas fa-chevron-right"></i> Events</a>
+    <main class="container">
+        <!-- Testers sectie toegevoegd -->
+<!-- In je HTML, vervang de testers-section met dit: -->
+<div class="testers-section">
+    <h2><i class="fas fa-star"></i> Officiële Testers <i class="fas fa-star"></i></h2>
+    <div class="testers-scroll-container">
+        <div class="testers-row">
+            <div class="tester-card">
+                <div class="tester-skin">
+                    <img src="https://mc-heads.net/body/Hidspot" alt="Hidspot" class="full-skin">
                 </div>
-                
-                <div class="link-group">
-                    <h4>Community</h4>
-                    <a href="https://discord.gg/Gn9wHhrx7t"><i class="fas fa-chevron-right"></i> Discord</a>
-                    <a href="https://www.tiktok.com/@lifestealnl"><i class="fas fa-chevron-right"></i> TikTok</a>
+                <div class="tester-info">
+                    <h3>Hidspot</h3>
+                    <div class="tester-role">
+                        <i class="fas fa-crown"></i> Hoofd Tester
+                    </div>
                 </div>
             </div>
             
-            <div class="server-ip-box">
-                <h4>Server IP</h4>
-                <div class="ip-display">play.lifestealnl.nl</div>
-                <button class="copy-ip-btn">
-                    <i class="fas fa-copy"></i> Kopieer IP
-                </button>
+            <div class="tester-card">
+                <div class="tester-skin">
+                    <img src="https://mc-heads.net/body/banzy_" alt="banzy_" class="full-skin">
+                </div>
+                <div class="tester-info">
+                    <h3>banzy_</h3>
+                    <div class="tester-role">
+                        <i class="fas fa-shield-alt"></i> Senior Tester
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>© 2025 LIFESTEALNL | SEASON 3 | GEEN OFFICIELE MINECRAFT SERVER</p>
-        </div>
-    </div>
-</footer>
-
-<!-- Player Modal -->
-<div id="player-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="skin-display">
-            <img id="modal-skin" src="https://mc-heads.net/body/Hidspot" alt="Minecraft Skin" class="skin-image">
-        </div>
-        <h2 id="modal-name">Hidspot</h2>
-        <div class="tier-display">
-            Tier: <span id="modal-tier" class="tier-badge s-tier">S</span>
-        </div>
-        <div id="modal-test-info" class="test-info">
-            <div class="tested-info">
-                <h4>Geteste Speler</h4>
-                <p>Deze speler heeft een officiële tier ranking.</p>
+            
+            <div class="tester-card">
+                <div class="tester-skin">
+                    <img src="https://mc-heads.net/body/Hlppo" alt="Hlppo" class="full-skin">
+                </div>
+                <div class="tester-info">
+                    <h3>Hlppo</h3>
+                    <div class="tester-role">
+                        <i class="fas fa-check-circle"></i> Tester
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="js/home.js"></script>
-<script src="js/script.js"></script>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Zoek spelers...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="ranking-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>RANK</th>
+                        <th>SPELER</th>
+                        <th>TIER</th>
+                        <th>BIJGEWERKT</th>
+                        <th>ACTIE</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-data">
+                    <!-- Data wordt hier geladen via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 LIFESTEALNL | GEEN OFFICIELE MINECRAFT SERVER</p>
+        </div>
+    </footer>
+
+    <!-- Player Modal -->
+    <div id="player-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="skin-display">
+                <img id="modal-skin" src="" alt="Minecraft Skin" class="skin-image">
+            </div>
+            <h2 id="modal-name"></h2>
+            <div class="tier-display">
+                Tier: <span id="modal-tier" class="tier-badge"></span>
+            </div>
+            <div id="modal-test-info" class="test-info"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
