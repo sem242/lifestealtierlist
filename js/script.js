@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Complete spelerdata
     const playerData = [
         // Geteste spelers
+        { name: "Wickedfire75", tier: "S+", tested: true },
         { name: "Hidspot", tier: "S", tested: true },
         { name: "banzy_", tier: "S", tested: true },
         { name: "Hlppo", tier: "S", tested: true },
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Tier kleuren mapping
     const tierColors = {
+        'S+': 'splus-tier',
         'S': 's-tier',
         'A': 'a-tier',
         'B': 'b-tier',

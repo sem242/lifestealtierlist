@@ -781,7 +781,7 @@ body {
     font-size: 0.8rem;
     text-transform: uppercase;
 }
-
+.splus-tier { background: linear-gradient(135deg, rgba(255, 0, 255, 0.7) 0%, rgba(255, 177, 248, 0.8) 100%); }
 .s-tier { background: #ff0000; color: white; }
 .a-tier { background: #ff6600; color: white; }
 .b-tier { background: #ffcc00; color: #333; }
