@@ -420,7 +420,7 @@ body {
 /* Stats Section */
 .stats-section {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 100%);
+    background: #0a0a0a;
     position: relative;
 }
 
@@ -543,9 +543,9 @@ body {
     transform: scale(1.2);
 }
 
-.link-card.tierlist { background: url('https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2F1-8-or-1-9-pvp-better-v0-599du9o4wc8b1.jpg%3Fwidth%3D1080%26crop%3Dsmart%26auto%3Dwebp%26s%3D32f68ddd09ec302ad580255c872fc8a13506b483') center/cover; }
+.link-card.tierlist { background: url('https://media.forgecdn.net/avatars/thumbnails/553/198/256/256/637893531604958177.png') center/cover; }
 .link-card.rules { background: url('https://cdn.modrinth.com/data/4a1Rhkhp/36f39c9eebded9a434f10a6bfd67861fb83a19dc.png') center/cover; }
-.link-card.events { background: url('https://minecraft.wiki/images/thumb/A_Minecraft_Movie_Live_Event_Screenshot_2.jpeg/800px-A_Minecraft_Movie_Live_Event_Screenshot_2.jpeg?488a6') center/cover; }
+.link-card.events { background: url('https://www.blockbench.net/_nuxt/img/4.12.23f16aa.webp') center/cover; }
 
 /* Footer */
 .main-footer {
