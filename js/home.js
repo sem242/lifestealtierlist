@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyBtn = document.querySelector('.copy-ip-btn');
     if (copyBtn) {
         copyBtn.addEventListener('click', function() {
-            const ip = 'play.lifestealnl.nl';
+            const ip = 'LifestealNL.mclogin.nl';
             navigator.clipboard.writeText(ip).then(() => {
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = '<i class="fas fa-check"></i> Gekopieerd!';
@@ -58,6 +58,32 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Online player counter (Nieuw toegevoegd)
+    async function updatePlayerCount() {
+        try {
+            const response = await fetch("https://api.mcsrvstat.us/2/LifestealNL.mclogin.nl");
+            const data = await response.json();
+            
+            const playerCountElement = document.querySelector('.player-count');
+            if (!playerCountElement) return;
+            
+            if (data.online) {
+                playerCountElement.textContent = `${data.players.online} spelers online`;
+                document.querySelector('.status-indicator').classList.add('online');
+            } else {
+                playerCountElement.textContent = "Server offline";
+                document.querySelector('.status-indicator').classList.remove('online');
+            }
+        } catch (error) {
+            console.error("Fout bij ophalen serverstatus:", error);
+            document.querySelector('.player-count').textContent = "Status onbekend";
+        }
+    }
+    
+    // Update elke 60 seconden
+    updatePlayerCount();
+    setInterval(updatePlayerCount, 60000);
     
     // Add animation to elements when they come into view
     const animateOnScroll = function() {
