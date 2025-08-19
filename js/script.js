@@ -10,22 +10,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const playerData = [
         // Geteste spelers
         { name: "Wickedfire75", tier: "S+", tested: true },
+        { name: "404Mat", tier: "S", tested: true },
         { name: "Hidspot", tier: "S", tested: true },
         { name: "banzy_", tier: "S", tested: true },
         { name: "Magicify", tier: "S", tested: true },
         { name: "Hlppo", tier: "S", tested: true },
         { name: "Mat (lt3 btw)", tier: "S", tested: true },
+        { name: "MimiBoy15", tier: "A", tested: true },
+        { name: "Rxiq", tier: "A", tested: true },
+        { name: "crxnsio", tier: "A", tested: true },
+        { name: "Druxiz", tier: "A", tested: true },
+        { name: "ToonDrone", tier: "A", tested: true },
         { name: "Doevie", tier: "B", tested: true },
         { name: "Kuspim", tier: "B", tested: true },
         { name: "enfuindhdd", tier: "B", tested: true },
         { name: "Poplolsa", tier: "B", tested: true },
         { name: "Romigkoenkie", tier: "B", tested: true },
-        { name: "Elementix_", tier: "B", tested: true },
-        { name: "MimiBoy15", tier: "A", tested: true },
-        { name: "Rxiq", tier: "A", tested: true },
-        { name: "crxnsio", tier: "A", tested: true },
-        { name: "Druxiz", tier: "A", tested: true },
-        { name: "ToonDrone", tier: "A", tested: true }, // hoogste/laatste tier
+        { name: "Elementix_", tier: "B", tested: true }, // hoogste/laatste tier
         { name: "Broodkaas", tier: "C", tested: true },
         { name: "Babber_", tier: "C", tested: true },
         { name: "Mettix", tier: "C", tested: true },
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Ems3y", tier: "F", tested: true },
         { name: "Chickenfighter50", tier: "F", tested: true },
         { name: "Delano-m2014", tier: "F", tested: true },
-        { name: "404Mat", tier: "S", tested: true },
+
         // Ongeteste spelers
         "Fla3m", "Jurreflorisrobi", "Zenderlink", "flob1n_", 
         "jthpower", "Smotserela", "Extra_Me", 
