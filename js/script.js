@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "sm75852", tier: "C", tested: true },
         { name: "gamer_xd_pro_200", tier: "C", tested: true },
         { name: "llynix", tier: "C", tested: true },
-        { name: "ShrksKillz", tier: "C", tested: true },
         { name: "ItzTrazyyy", tier: "D", tested: true },
         { name: "mexz", tier: "D", tested: true },
         { name: "oEntityz", tier: "D", tested: true },
