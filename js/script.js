@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "banzy_", tier: "S", tested: true },
         { name: "Magicify", tier: "S", tested: true },
         { name: "Hlppo", tier: "S", tested: true },
-        { name: "Mat (lt3 btw)", tier: "S", tested: true },
         { name: "MimiBoy15", tier: "A", tested: true },
         { name: "Rxiq", tier: "A", tested: true },
         { name: "crxnsio", tier: "A", tested: true },
